@@ -21,7 +21,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 1 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="/swasthAI/index.html" onClick={() => setActiveIndex(1)}>
+            <a href="indexcopy.html" onClick={() => setActiveIndex(1)}>
               <i className="fas fa-weight"></i>
               <span className="nav-text">Fitness</span>
             </a>
