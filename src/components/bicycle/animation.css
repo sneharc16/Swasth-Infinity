@@ -1,0 +1,12 @@
+#Layer_1 { 
+    height: 20%;
+    width: 20%;
+    margin-top: 10%;
+}
+body { 
+    background-color: #FFF; 				
+    text-align: center; 
+}			
+svg { 
+     display: inline-block;				 
+}
