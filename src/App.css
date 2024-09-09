@@ -1,3 +1,50 @@
 .App {
   text-align: center;
 }    
+.video{
+   max-height: 60%; 
+   margin-top:100px;
+   margin-left:40px;
+   border-radius:15px;
+}
+@media(max-width: 1200px){
+  .hstyle{
+    font-size: 1.5rem;
+  }
+}
+@media(max-width: 750px){
+  .hstyle{
+    font-size: 1rem;
+    margin-left: 10px !important;
+    margin-top: 60px !important;
+  }
+  .playbtn{
+    margin-left: 10px !important;
+  }
+  .video{
+    max-height: 60%; 
+    margin-top:60px;
+    margin-left:40px;
+    border-radius:15px;
+ }
+}
+@media(max-width: 500px){
+  .video{
+    width:250px;
+    max-height: 100%; 
+    margin-top:40px;
+    margin-left:15px;
+    border-radius:15px;
+ }
+ .videodiv{
+  flex-direction: column !important;
+ }
+  .hstyle{
+    font-size: 0.8rem;
+    margin-left: 0px !important;
+    margin-top: 20px !important;
+  }
+  .playbtn{
+    margin-left: 0px !important;
+  }
+}

@@ -1,9 +1,8 @@
 .main-menu {
-  position: -webkit-sticky; /* For Safari */
+  position: -webkit-sticky; 
   position: sticky;
   top: 0;
-  overflow-y: auto; /* Allow scrolling within the navbar if content overflows */
-  height: 100vh; /* Occupy full viewport height */
+  overflow-y: auto;
   background: rgb(73, 57, 113);
   padding-top: 10px;
   border-radius: 0 15px 0 0;

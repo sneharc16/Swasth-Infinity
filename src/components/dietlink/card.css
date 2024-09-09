@@ -1,10 +1,6 @@
-.cards-in-set{
-	display: flex;
-	flex-direction: row;
-}
-
 .card11{
-  margin-left: 40% !important;
+  margin-top: 30px !important;
+  margin-left: 20% !important;
   box-shadow: 1px 4px 32px rgba(0, 0, 0, .2);
   line-height:3rem;
   border-radius: 6px;
@@ -12,8 +8,7 @@
   max-width:580px; 
   height:auto;
   display:block;
-  margin: auto;
-  width: 500px;
+  width: 600px;
 background: rgb(235,87,94);
 background: -moz-linear-gradient(-45deg, rgb(186, 87, 235) 0%, rgb(101, 21, 162) 99%);
 background: -webkit-linear-gradient(-45deg, rgb(110, 14, 121) 0%,rgb(65, 2, 99) 99%);
@@ -70,15 +65,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb575e', end
   text-decoration:none;
   color:white;
 }
-
+@media (max-width: 935px){
+  .card11{
+    width:300px;
+    margin-left: 10%;
+  }
+}
 @media (max-width: 770px){
 	.cards-in-set{
 		flex-direction: column;
 	}
 	.card11{
-		margin-left: 20px !important;
+		/* margin-left: 20px !important; */
 		margin-right: 10px !important;
 		margin-bottom: 30px !important;
 		margin-top: 30px !important;
 	}
+}
+@media (max-width: 490px){
+  .card11{
+    width:260px !important;
+  }
+  .card11-title{
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 390px){
+  .card11{
+    width:230px !important;
+  }
+  .card11-title{
+    font-size: 1.1rem;
+  }
 }

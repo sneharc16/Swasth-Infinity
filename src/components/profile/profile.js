@@ -315,7 +315,7 @@ Please let me know if there is any additional information you require from me be
           <div className="day">6</div>
           <div className="day project-develop">
             7
-            <div className="project-detail develop">Take part in course about future design trends and new technologies</div>
+            <div className="project-detail develop">Take a sustainable step towards environment.</div>
           </div>
           <div className="day">8</div>
           <div className="day">9</div>
@@ -326,8 +326,8 @@ Please let me know if there is any additional information you require from me be
           <div className="day">14</div>
           <div className="day project-market">
             15
-            <div className="hover-title">Marketing</div>
-            <div className="project-detail">Write an article about design trends</div>
+            <div className="hover-title">Cycle Marathon</div>
+            <div className="project-detail">Need to attend the cycle marathon.</div>
             <div className="popup-check">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -347,9 +347,9 @@ Please let me know if there is any additional information you require from me be
           <div className="day">16</div>
           <div className="day project-market">
             17
-            <div className="hover-title">Marketing</div>
-            <div className="project-detail">Create AdWords campaign</div>
-            <div className="project-detail">Send newsletter to clients</div>
+            <div className="hover-title">Half Marathon Noida</div>
+            <div className="project-detail">Create Banners for sustainability</div>
+            <div className="project-detail">Increase the score to gain sustain points</div>
             <div className="popup-check">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -373,8 +373,8 @@ Please let me know if there is any additional information you require from me be
           <div className="day">22</div>
           <div className="day project-finance">
             23
-            <div className="hover-title">Management</div>
-            <div className="project-detail finance">Redesign project UI interface for clients and get feedback</div>
+            <div className="hover-title">Period Reminder</div>
+            <div className="project-detail finance">Prediction of current month period date.</div>
             <div className="popup-check">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

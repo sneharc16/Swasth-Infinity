@@ -7,7 +7,7 @@ function Card() {
       <h4 className="card11-title">Food Recommendations</h4>
       <p className="card11-text">Click on the below button to generate the food recommendations on the basis of Dietary Preferences and Fitness Regime.</p>
       <button className="card11-button">
-        <a href="https://bcf4d70d2743803310.gradio.live/" target="_blank" rel="noopener noreferrer" className="card11-link">
+        <a href="https://fa11923222ceaae638.gradio.live/" target="_blank" rel="noopener noreferrer" className="card11-link">
           Generate
         </a>
       </button>

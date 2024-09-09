@@ -774,7 +774,9 @@ main {
     margin: 15px;
     padding: 20px;
   }
-
+.left-bottom{
+  margin-top: 100px;
+}
   .btn {
     padding: 8px 8px;
     font-size: 0.9rem;
@@ -855,11 +857,11 @@ main {
 @media (max-width: 910px) {
   main {
     grid-template-columns: 10% 90%;
-    margin: 20px;
+    margin: 1px;
   }
-  .weekly-schedule{
+  /* .weekly-schedule{
     margin-top: 200px;
-  }
+  } */
   .content {
     grid-template-columns: 55% 45%;
   }
@@ -923,21 +925,24 @@ main {
 		grid-template-rows: 45% 55%;
     padding: 10px 20px 10px;
   }
-
+.left-bottom{
+  margin-top: 0px;
+}
   .right-content {
+    width: 238px;
     grid-area: rightContent;
-		grid-template-rows: 5% 40% 50%;
+    grid-template-rows: 5% 30% 30% 20%;
     margin: 15px 15px 0 15px;
     padding: 10px 0 0;
     gap: 15px;
-  }
+}
 
-  .activities{
+  /* .activities{
     margin-top: -180px;
-  }
-  .weekly-schedule {
+  } */
+  /* .weekly-schedule {
     margin-top: 140px;
-  }
+  } */
 
   .active-calories-container {
     display: flex;
@@ -946,12 +951,17 @@ main {
     gap: 10px;
   }
 
-  .friends-activity {
-    display: none;
-  }
 }
 @media (max-width: 700px){
   .content{
     margin-left: 35px;
   }
+}
+@media (max-width: 700px) {
+  .left-bottom {
+      margin-top: 140px;
+  }
+}
+@media (max-width: 390px) {
+  
 }

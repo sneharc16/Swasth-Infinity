@@ -22,7 +22,7 @@ const Navbar = () => {
             <b></b>
             <b></b>
             <a href="/swasthAI/index.html" onClick={() => setActiveIndex(1)}>
-              <i className="fa fa-sliders nav-icon"></i>
+              <i className="fas fa-weight"></i>
               <span className="nav-text">Fitness</span>
             </a>
           </li>
@@ -30,7 +30,7 @@ const Navbar = () => {
             <b></b>
             <b></b>
             <a href="/cards" onClick={() => setActiveIndex(2)}>
-              <i className="fa fa-calendar-check nav-icon"></i>
+              <i className="fas fa-apple-alt"></i>
               <span className="nav-text">Dietary</span>
             </a>
           </li>
@@ -38,14 +38,14 @@ const Navbar = () => {
             <b></b>
             <b></b>
             <a href="/sus" onClick={() => setActiveIndex(3)}>
-              <i className="fa fa-person-running nav-icon"></i>
+              <i className="fas fa-leaf"></i>
               <span className="nav-text">Sustain</span>
             </a>
           </li>
           <li className={`nav-item ${activeIndex === 4 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="https://arunamentalwellness.netlify.app/" onClick={() => setActiveIndex(3)}>
+            <a href="https://arunamentalwellness.netlify.app/" onClick={() => setActiveIndex(4)}>
               <i className="fas fa-hand-holding-heart"></i>
               <span className="nav-text">Serenity</span>
             </a>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="/profile" onClick={() => setActiveIndex(4)}>
+            <a href="/profile" onClick={() => setActiveIndex(5)}>
               <i className="fa fa-user nav-icon"></i>
               <span className="nav-text">Profile</span>
             </a>

@@ -126,7 +126,6 @@
 
 .section-plans {
   background-color: #ffffff;
-  padding: 4rem 0 4rem 0;
 }
 
 .card2 {
@@ -424,10 +423,29 @@
   /* width: calc((100% - 6rem) / 4); */
   width: 250px;
 }
+@media (max-width: 800px){
+  .section-plans{
+    width:600px;
+  }
+}
 @media (max-width: 700px){
+  .section-plans{
+    width:100px;
+    margin-left: 25%;
+  }
   .row{
     display: flex;
     flex-direction: column;
     max-width: 114px;
+  }
+}
+@media (max-width: 420px){
+  .section-plans{
+    margin-left: 20% !important;
+  }
+}
+@media (max-width: 390px){
+  .section-plans{
+    margin-left: 17% !important;
   }
 }
