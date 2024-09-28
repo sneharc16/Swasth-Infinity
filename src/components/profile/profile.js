@@ -42,7 +42,7 @@ if (isChrome) {
         </div>
         <div className="side-wrapper">
           <div className="user-profile">
-            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/40b7cce2-c289-4954-9be0-938479832a9c" alt="" className="user-photo" />
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202212/afp_000_9cq7ux_shilpa_shetty_yoga-one_one.jpg?VersionId=DeAg8M98aY9OSz3Z3gVSU84uySM4f245" alt="" className="user-photo" />
             <div className="user-name">Seeta Verma</div>
             <div className="user-mail">seeta.verma@gmail.com</div>
           </div>

@@ -4,7 +4,9 @@ import Home from './pages/home';
 import Sustain from './pages/sustain';
 import Profilepage from './pages/profile';
 import LoaderWrapper from './pages/loaderwrapper';
-import Cards from './pages/dietcard'
+import Cards from './pages/dietcard';
+import { Arthub } from "./pages/arthub/Arthub"
+import Tracker from "./pages/trackersheet/Tracker"
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route path="/sus" element={<Sustain />} />
           <Route path="/profile" element={<Profilepage />} />
           <Route path="/cards" element={<Cards />} />
+          <Route path="/arthub" element={<Arthub/>} />
+          <Route path="/tracker" element={<Tracker/>} />
+          {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>
     </Router>

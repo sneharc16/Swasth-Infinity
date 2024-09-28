@@ -37,11 +37,11 @@ body {
 	background: #212140; */
 }
 
-/* MAIN MENU */
+/* MAIN1 MENU */
 
-main {
+main1 {
   display: grid;
-  grid-template-columns: 13% 87%;
+  grid-template-columns: 14% 86%;
   /* width: 100%;
   margin: 10px; */
   background: rgb(254, 254, 254);
@@ -49,7 +49,7 @@ main {
     0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12); */
 }
 
-.main-menu {
+.main1-menu {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
   top: 0;
@@ -61,7 +61,7 @@ main {
   font-family: "Roboto", sans-serif;
 }
 
-.main-menu h1 {
+.main1-menu h1 {
   display: block;
   font-weight: 500;
   font-size: 1.3rem;
@@ -672,11 +672,11 @@ main {
 }
 
 @media (max-width: 1500px) {
-  main {
+  main1 {
     grid-template-columns: 7% 93%;
   }
 
-  .main-menu h1 {
+  .main1-menu h1 {
     display: none;
   }
 
@@ -696,10 +696,10 @@ main {
 }
 
 @media (max-width: 1310px) {
-  main {
+  main1 {
     grid-template-columns: 10% 90%;
   }
-  .main-menu h1{
+  .main1-menu h1{
     font-size: 0.1rem;
   }
 
@@ -855,7 +855,7 @@ main {
 }
 
 @media (max-width: 910px) {
-  main {
+  main1 {
     grid-template-columns: 10% 90%;
     margin: 1px;
   }
@@ -908,7 +908,7 @@ main {
 }
 
 @media (max-width: 700px) {
-  main {
+  main1 {
     grid-template-columns: 15% 85%;
   }
 

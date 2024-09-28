@@ -19,8 +19,8 @@ const Homesection = () => {
   ];
 
   return (
-    <main>
-      <nav className="main-menu">
+    <main1>
+      <nav className="main1-menu">
         <h1>Swasth∞</h1>
         <img className="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
         <ul>
@@ -59,12 +59,20 @@ const Homesection = () => {
           <li className={`nav-item ${activeIndex === 4 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="https://arunamentalwellness.netlify.app/" onClick={() => setActiveIndex(5)}>
+            <a href="/arthub" onClick={() => setActiveIndex(4)}>
               <i className="fas fa-hand-holding-heart"></i>
               <span className="nav-text">Serenity</span>
             </a>
           </li>
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
+            <b></b>
+            <b></b>
+            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
+              <i className="fas fa-venus"></i>
+              <span className="nav-text">SheFit</span>
+            </a>
+          </li>
+          <li className={`nav-item ${activeIndex === 6 ? 'active' : ''}`}>
             <b></b>
             <b></b>
             <a href="/profile" onClick={() => setActiveIndex(5)}>
@@ -142,7 +150,7 @@ const Homesection = () => {
               <i className="fa fa-message nav-icon"></i>
             </div>
             <h4>Seeta Verma</h4>
-            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/40b7cce2-c289-4954-9be0-938479832a9c" alt="user" />
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202212/afp_000_9cq7ux_shilpa_shetty_yoga-one_one.jpg?VersionId=DeAg8M98aY9OSz3Z3gVSU84uySM4f245" alt="user" />
           </div>
 
           <div className="active-calories">
@@ -203,7 +211,7 @@ const Homesection = () => {
           </div>
         </div>
       </section>
-    </main>
+    </main1>
   );
 }
 

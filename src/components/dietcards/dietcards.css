@@ -126,6 +126,7 @@
 
 .section-plans {
   background-color: #ffffff;
+  grid-template-columns: repeat(auto-fill, minmax(70rem, 1fr));
 }
 
 .card2 {
@@ -335,6 +336,9 @@
   color: #fff;
   width: 75%;
   padding-bottom: 2px;
+  margin-bottom: 10px;
+  background-color: rgba(66, 66, 66, 0.5);
+  border-radius: 15px;
 }
 
 .card2__heading-span {
@@ -396,12 +400,12 @@
 
 .row {
   max-width: 75rem;
-  margin: 0 auto;
+  margin: 90px;
+  margin-bottom: 0px !important;
 }
 
 .row:not(:last-child) {
   margin-bottom: 5rem;
-  margin-top: 5rem;
 }
 
 .row::after {
@@ -423,23 +427,27 @@
   /* width: calc((100% - 6rem) / 4); */
   width: 250px;
 }
-@media (max-width: 800px){
-  .section-plans{
-    width:600px;
-  }
-}
 @media (max-width: 700px){
-  .section-plans{
-    width:100px;
-    margin-left: 25%;
-  }
   .row{
     display: flex;
     flex-direction: column;
-    max-width: 114px;
+    max-width: 90px;
   }
 }
-@media (max-width: 420px){
+@media (max-width: 750px){
+
+  .section-plans{
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+}
+@media (max-width: 550px){
+
+  .section-plans{
+    display: contents;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+}
+/* @media (max-width: 420px){
   .section-plans{
     margin-left: 20% !important;
   }
@@ -448,4 +456,4 @@
   .section-plans{
     margin-left: 17% !important;
   }
-}
+} */

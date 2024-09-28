@@ -86,31 +86,7 @@ const CustomPatterns = () => {
           </div>
         </div>
 
-        <div className="col-1-of-4">
-          <div className="card2">
-            <div className="card2__side card2__side--front-4">
-              <div className="card2__title card2__title--4">
-                {/* <i className="fas fa-rocket"></i> */}
-                <h4 className="card2__heading">Momos</h4>
-              </div>
-              <div className="card2__details">
-                <ul>
-                  <li>Ditch those deep-fried momos! You didn’t do those 20 squats just to munch on extra calories.</li>
-                </ul>
-              </div>
-            </div>
-            <div className="card2__side card2__side--back card2__side--back-4">
-              <div className="card2__cta">
-              <div className="card2__details">
-                <ul>
-                  <li>Paniyaram is steamed and made from fermented batter, offering probiotics and less oil compared to fried momos.</li>
-                </ul>
-              </div>
-                <a href="#popup" className="btn btn--white">Add to Diet</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div className="row">
         
@@ -132,6 +108,32 @@ const CustomPatterns = () => {
               <div className="card2__details">
                 <ul>
                   <li>Paneer rolls with whole wheat roti are a cleaner, fresher, and more balanced meal that provides protein without excess calories or additives.</li>
+                </ul>
+              </div>
+                <a href="#popup" className="btn btn--white">Add to Diet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-1-of-4">
+          <div className="card2">
+            <div className="card2__side card2__side--front-4">
+              <div className="card2__title card2__title--4">
+                {/* <i className="fas fa-rocket"></i> */}
+                <h4 className="card2__heading">Momos</h4>
+              </div>
+              <div className="card2__details">
+                <ul>
+                  <li>Ditch those deep-fried momos! You didn’t do those 20 squats just to munch on extra calories.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="card2__side card2__side--back card2__side--back-4">
+              <div className="card2__cta">
+              <div className="card2__details">
+                <ul>
+                  <li>Paniyaram is steamed and made from fermented batter, offering probiotics and less oil compared to fried momos.</li>
                 </ul>
               </div>
                 <a href="#popup" className="btn btn--white">Add to Diet</a>
@@ -165,8 +167,10 @@ const CustomPatterns = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="col-1-of-4">
+      <div className="row">
+      <div className="col-1-of-4">
           <div className="card2">
             <div className="card2__side card2__side--front-7">
               <div className="card2__title card2__title--7">
@@ -217,11 +221,6 @@ const CustomPatterns = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      
-      <div className="u-center-text u-margin-top-huge">
-        <a href="#" className="btn btn--green">Get Started</a>
       </div>
     </section>
   );

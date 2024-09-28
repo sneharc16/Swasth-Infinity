@@ -2,6 +2,7 @@
   position: -webkit-sticky; 
   position: sticky;
   top: 0;
+  height: 100%;
   overflow-y: auto;
   background: rgb(73, 57, 113);
   padding-top: 10px;

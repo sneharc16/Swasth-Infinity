@@ -45,12 +45,20 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 4 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="https://arunamentalwellness.netlify.app/" onClick={() => setActiveIndex(4)}>
+            <a href="/arthub" onClick={() => setActiveIndex(4)}>
               <i className="fas fa-hand-holding-heart"></i>
               <span className="nav-text">Serenity</span>
             </a>
           </li>
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
+            <b></b>
+            <b></b>
+            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
+              <i className="fas fa-venus"></i>
+              <span className="nav-text">SheFit</span>
+            </a>
+          </li>
+          <li className={`nav-item ${activeIndex === 6 ? 'active' : ''}`}>
             <b></b>
             <b></b>
             <a href="/profile" onClick={() => setActiveIndex(5)}>

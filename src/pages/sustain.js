@@ -33,12 +33,12 @@ const Card = () => {
         <div >
           <h1 className='hstyle' style={{  marginTop:'140px', marginLeft:'80px', color:'blueviolet' }}>Avail sustain points to plan a tree.</h1>
         <button className='playbtn' onClick={playVideo} style={{ width:'100px',height:'40px' , marginLeft:'100px', borderRadius:'15px',background:'blueviolet' , color:'white' }}>
-          Play Video
+          Avail Points
         </button>
         </div>
         </div>
         {/* YourComponent below the video */}
-        <div style={{ flex: 1, overflowY: 'auto' }}>
+        <div style={{ flex: 1 }}>
           <YourComponent />
         </div>
       </div>
