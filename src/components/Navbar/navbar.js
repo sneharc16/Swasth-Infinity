@@ -61,7 +61,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 6 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="/profile" onClick={() => setActiveIndex(5)}>
+            <a href="/profile" onClick={() => setActiveIndex(6)}>
               <i className="fa fa-user nav-icon"></i>
               <span className="nav-text">Profile</span>
             </a>

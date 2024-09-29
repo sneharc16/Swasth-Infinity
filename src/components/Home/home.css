@@ -52,8 +52,7 @@ main1 {
 .main1-menu {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 0;
-  overflow-y: auto; /* Allow scrolling within the navbar if content overflows */
+  top: 0; /* Allow scrolling within the navbar if content overflows */
   height: 100vh; /* Occupy full viewport height */
   background: rgb(73, 57, 113);
   padding-top: 10px;

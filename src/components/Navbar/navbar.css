@@ -1,15 +1,15 @@
 .main-menu {
   position: -webkit-sticky; 
   position: sticky;
-  top: 0;
-  height: 100%;
-  overflow-y: auto;
+  top: 0; 
+  height: 100vh; 
   background: rgb(73, 57, 113);
   padding-top: 10px;
   border-radius: 0 15px 0 0;
   font-family: "Roboto", sans-serif;
   width:100px;
 }
+
 
 .main-menu h1 {
   display: block;
