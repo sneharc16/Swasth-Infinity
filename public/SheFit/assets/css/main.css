@@ -27,7 +27,13 @@
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+.data-\[theme\=dark\]\:bg-black[data-theme=dark] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255);
+}
+.relative{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 29.14%, rgba(255, 255, 255, 0.16) 100%), #7b39bd;
+}
 .light-background {
   --background-color: rgba(73, 57, 113, 0.305);
   --surface-color: #ffffff;
