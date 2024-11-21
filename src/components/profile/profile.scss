@@ -370,7 +370,7 @@ img {
   border-right: 1px solid var(--border-color);
   width: auto;
   display: grid;
-  grid-template-columns: 10% 23%;
+  grid-template-columns: 10% 16%;
   overflow: auto;
   flex-shrink: 0;
  }
@@ -1055,10 +1055,10 @@ img {
  @media screen and (min-width: 1360px) {
   /* Chrome-specific styles */
   body.chrome .inbox-container {
-    grid-template-columns: 10% 26%;
+    grid-template-columns: 10% 16%;
   }
   body.edge .inbox-container {
-    grid-template-columns: 10% 28%;
+    grid-template-columns: 10% 20%;
   }
 }
  @media screen and (max-width: 1200px) {

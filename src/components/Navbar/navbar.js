@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { useAuth } from '../../store/auth';
 import './navbar.css'; 
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const { isLoggedIN } = useAuth();
+
+  const toggleDropdown = () => setShowDropdown((prev) => !prev);
 
   return (
     <main>
@@ -67,6 +72,23 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+
+        <div className="user-menu">
+          <div className="user-icon-circle" onClick={toggleDropdown}>
+            <i className="fa fa-user"></i>
+          </div>
+          {showDropdown && (
+            <div className="dropdown-menu">
+
+              {isLoggedIN ? (<a href="/logout">Logout</a>) : (<>
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+              </>)}
+              
+              
+            </div>
+          )}
+        </div>
       </nav>
     </main>
   );

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import speaker from "../../assets/speaker.png"
 import audio2 from "../../assets/audio2.mp3"
+import { useAuth } from '../../store/auth';
 import './home.css'; 
 
 const Homesection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const {user} = useAuth();
 
   const activities = [
     { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/467cf682-03fb-4fae-b129-5d4f5db304dd', title: 'Tennis' },
@@ -19,6 +21,11 @@ const Homesection = () => {
     { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e1a66078-1927-4828-b793-15c403d06411', title: 'Yoga' },
     { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7568e0ff-edb5-43dd-bff5-aed405fc32d9', title: 'Swimming' }
   ];
+
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => setShowDropdown((prev) => !prev);
+  const { isLoggedIN } = useAuth();
 
   return (
     <main1>
@@ -107,6 +114,23 @@ const Homesection = () => {
       </audio>
     </li>
         </ul>
+
+        <div className="user-menu-home">
+          <div className="user-icon-circle-home" onClick={toggleDropdown}>
+            <i className="fa fa-user"></i>
+          </div>
+          {showDropdown && (
+            <div className="dropdown-menu-home">
+
+              {isLoggedIN ? (<a href="/logout">Logout</a>) : (<>
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+              </>)}
+              
+              
+            </div>
+          )}
+        </div>
       </nav>
 
       <section className="content">
@@ -136,7 +160,7 @@ const Homesection = () => {
                       <p>{['mon', 'wed', 'fri', 'sat'][activityIndex - 1]}</p>
                     </div>
                     <div className="activity">
-                      <h2>{['Indian Navy Half Marathon', 'The Made of Chennai Run', 'Gurugram Half Marathon', 'River Cyclathon'][activityIndex - 1]}</h2>
+                      <h2>{['Indian Navy Half Marathon', 'The Made of Chennai Run', 'Gurugram Half Marathon', 'River Cyclathon Program'][activityIndex - 1]}</h2>
                       <div className="participants">
                         {[1, 2, 3, 4].map((i) => (
                           <img key={i} src={`https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/${['c61daa1c-5881-43f8-a50f-62be3d235daf', '90affa88-8da0-40c8-abe7-f77ea355a9de', '07d4fa6f-6559-4874-b912-3968fdfe4e5e', 'e082b965-bb88-4192-bce6-0eb8b0bf8e68'][i - 1]}`} style={{ '--i': i }} alt="" />
@@ -175,7 +199,7 @@ const Homesection = () => {
               <i className="fa fa-bell nav-icon"></i>
               <i className="fa fa-message nav-icon"></i>
             </div>
-            <h4>Seeta Verma</h4>
+            <h5>{user.firstName}</h5>
             <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202212/afp_000_9cq7ux_shilpa_shetty_yoga-one_one.jpg?VersionId=DeAg8M98aY9OSz3Z3gVSU84uySM4f245" alt="user" />
           </div>
 

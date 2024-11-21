@@ -3,8 +3,9 @@ import Profile from '../components/profile/profile';
 
 const Profilepage = () => {
   return (
-    <div>
-        <Profile/>
+    <div style={{display:'flex',flexDirection:'row'}}>
+      <Navbar />
+      <Profile/>
     </div>
   );
 };

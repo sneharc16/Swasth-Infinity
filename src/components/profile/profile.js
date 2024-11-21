@@ -1,11 +1,14 @@
 // TaskManager.js
 import React, { useState } from 'react';
+import { useAuth } from '../../store/auth';
 import './profile.scss'; // Import your CSS file here
 
 const Profile = () => {
   const [selectedMail, setSelectedMail] = useState([]);
   const [color, setColor] = useState('#493971');
   const [calendarVisible, setCalendarVisible] = useState(false);
+
+  const {user} = useAuth();
 
   const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 const isEdge = /Edg/.test(navigator.userAgent);
@@ -43,8 +46,8 @@ if (isChrome) {
         <div className="side-wrapper">
           <div className="user-profile">
             <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202212/afp_000_9cq7ux_shilpa_shetty_yoga-one_one.jpg?VersionId=DeAg8M98aY9OSz3Z3gVSU84uySM4f245" alt="" className="user-photo" />
-            <div className="user-name">Seeta Verma</div>
-            <div className="user-mail">seeta.verma@gmail.com</div>
+            <div className="user-name">{user.firstName} {user.lastName}</div>
+            <div className="user-mail">{user.email}</div>
           </div>
           <div className="user-notification">
             <div className="notify">
@@ -86,10 +89,11 @@ if (isChrome) {
         <div className="side-wrapper">
           <div className="project-title">Medical Complications</div>
           <div className="project-name">
-            <div className="project-department">Lactose Intolerance</div>
-            <div className="project-department">Back Pain</div>
-            <div className="project-department">Migraine</div>
-            <div className="project-department">Thyroid</div>
+            <div className="project-department">{user.medicalComplications[0]}</div>
+            <div className="project-department">{user.medicalComplications[1]}</div>
+            <div className="project-department">{user.medicalComplications[2]}</div>
+            <div className="project-department">{user.medicalComplications[3]}</div>
+            <div className="project-department">{user.medicalComplications[4]}</div>
           </div>
         </div>
         <div className="side-wrapper">
@@ -175,7 +179,7 @@ if (isChrome) {
     <div className="mail-detail-header">
      <div className="mail-detail-profile">
       <img src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png" alt="" className="members inbox-detail" />
-      <div className="mail-detail-name">Seeta Verma</div>
+      <div className="mail-detail-name">{user.firstName} {user.lastName}</div>
      </div>
      <div className="mail-icons">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-trash-2">
