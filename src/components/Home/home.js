@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import speaker from "../../assets/speaker.png"
-import audio2 from "../../assets/audio2.mp3"
 import { useAuth } from '../../store/auth';
+import Navbar from '../Navbar/navbar'
 import './home.css'; 
 
 const Homesection = () => {
@@ -29,109 +28,7 @@ const Homesection = () => {
 
   return (
     <main1>
-      <nav className="main1-menu">
-        <h1>Swasth∞</h1>
-        <img className="logo" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/4cfdcb5a-0137-4457-8be1-6e7bd1f29ebb" alt="" />
-        <ul>
-          <li className={`nav-item ${activeIndex === 0 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/" onClick={() => setActiveIndex(0)}>
-              <i className="fa fa-house nav-icon"></i>
-              <span className="nav-text">Home</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 1 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/indexcopy.html" onClick={() => setActiveIndex(1)}>
-              <i className="fas fa-weight"></i>
-              <span className="nav-text">Fitness</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 2 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/cards" onClick={() => setActiveIndex(2)}>
-              <i className="fas fa-apple-alt"></i>
-              <span className="nav-text">Dietary</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 3 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/sus" onClick={() => setActiveIndex(3)}>
-              <i className="fas fa-leaf"></i>
-              <span className="nav-text">Sustain</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 4 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/arthub" onClick={() => setActiveIndex(4)}>
-              <i className="fas fa-hand-holding-heart"></i>
-              <span className="nav-text">Serenity</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
-              <i className="fas fa-venus"></i>
-              <span className="nav-text">SheFit</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 6 ? 'active' : ''}`}>
-            <b></b>
-            <b></b>
-            <a href="/profile" onClick={() => setActiveIndex(6)}>
-              <i className="fa fa-user nav-icon"></i>
-              <span className="nav-text">Profile</span>
-            </a>
-          </li>
-          <li className={`nav-item ${activeIndex === 7 ? 'active' : ''}`}>
-      <b></b>
-      <b></b>
-      {/* Clickable image that plays audio */}
-      <div onClick={() => {
-  const audioElement = document.getElementById('audioPlayer');
-  if (audioElement) {
-    audioElement.play().catch(error => {
-      console.log('Audio playback failed:', error);
-    });
-  }
-}}>
-        <img 
-          src={speaker}
-          alt="Play Audio" 
-          style={{ width: '50px', height: '40px', cursor: 'pointer', backgroundColor:'white' , borderRadius:'50px'}} 
-        />
-      </div>
-      {/* Hidden audio player */}
-      <audio id="audioPlayer">
-        <source src={audio2} type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-        </ul>
-
-        <div className="user-menu-home">
-          <div className="user-icon-circle-home" onClick={toggleDropdown}>
-            <i className="fa fa-user"></i>
-          </div>
-          {showDropdown && (
-            <div className="dropdown-menu-home">
-
-              {isLoggedIN ? (<a href="/logout">Logout</a>) : (<>
-                <a href="/register">Register</a>
-                <a href="/login">Login</a>
-              </>)}
-              
-              
-            </div>
-          )}
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="content">
         <div className="left-content">

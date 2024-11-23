@@ -1,0 +1,29 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
+    gap: 5px;
+    margin: 20px 0;
+  }
+  
+  .day-box {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s;
+  }
+  
+  .streak-day {
+    background-color: green; /* Highlight streak days with green */
+    color: white;
+  }
+  
+  .day-box:hover {
+    background-color: #e0e0e0;
+  }
+  

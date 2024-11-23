@@ -10,6 +10,7 @@ import Tracker from "./pages/trackersheet/Tracker";
 import User from "./pages/login";
 import Create from "./pages/register";
 import Logout from "./pages/logout";
+import Dashboard from './pages/streak';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={<Create/>} />
           <Route path="/login" element={<User/>} />
           <Route path="/logout" element={<Logout/>} />
+          <Route path="/streak" element={<Dashboard/>} />
           {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>

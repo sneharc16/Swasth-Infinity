@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../store/auth';
+import speaker from "../../assets/speaker.png"
+import audio2 from "../../assets/audio2.mp3"
 import './navbar.css'; 
 
 const Navbar = () => {
@@ -71,6 +73,32 @@ const Navbar = () => {
               <span className="nav-text">Profile</span>
             </a>
           </li>
+
+          <li className={`nav-item ${activeIndex === 7 ? 'active' : ''}`}>
+      <b></b>
+      <b></b>
+      {/* Clickable image that plays audio */}
+      <div onClick={() => {
+  const audioElement = document.getElementById('audioPlayer');
+  if (audioElement) {
+    audioElement.play().catch(error => {
+      console.log('Audio playback failed:', error);
+    });
+  }
+}}>
+        <img 
+          src={speaker}
+          alt="Play Audio" 
+          style={{ width: '50px', height: '40px', cursor: 'pointer', backgroundColor:'white' , borderRadius:'50px'}} 
+        />
+      </div>
+      {/* Hidden audio player */}
+      <audio id="audioPlayer">
+        <source src={audio2} type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+      
         </ul>
 
         <div className="user-menu">

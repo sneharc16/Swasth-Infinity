@@ -10,6 +10,10 @@ const Profile = () => {
 
   const {user} = useAuth();
 
+  const formattedLastLogin = user.lastLoginDate
+            ? new Date(user.lastLoginDate).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })
+            : "Never";
+
   const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 const isEdge = /Edg/.test(navigator.userAgent);
 
@@ -70,9 +74,9 @@ if (isChrome) {
           </div>
           <div className="task-status">
             <div className="task-stat">
-              <div className="task-number">12</div>
+              <div className="task-number">{user.streak}</div>
               <div className="task-condition">Streaks</div>
-              <div className="task-tasks">10,Sept</div>
+              <div className="task-tasks">{formattedLastLogin}</div>
             </div>
             <div className="task-stat">
               <div className="task-number">22</div>
