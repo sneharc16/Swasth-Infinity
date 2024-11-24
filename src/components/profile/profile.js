@@ -1,5 +1,6 @@
 // TaskManager.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import StreakCalendar from '../streakcalender/streakcalender';
 import { useAuth } from '../../store/auth';
 import './profile.scss'; // Import your CSS file here
 
@@ -8,7 +9,21 @@ const Profile = () => {
   const [color, setColor] = useState('#493971');
   const [calendarVisible, setCalendarVisible] = useState(false);
 
-  const {user} = useAuth();
+  const [streakData, setStreakData] = useState([]); // Stores the user's login streak dates
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1); // Current month (1-12)
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear()); // Current year
+
+  const { user } = useAuth(); // Fetch user data from the auth context or store
+
+  // Update streak data when the user data changes
+  useEffect(() => {
+    if (user && user.lastLoginDates) {
+      const formattedDates = user.lastLoginDates.map(date =>
+        new Date(date).toISOString().split("T")[0] // Convert to YYYY-MM-DD
+      );
+      setStreakData(formattedDates); // Assuming `lastLoginDates` is an array of streak dates in `YYYY-MM-DD` format
+    }
+  }, [user]);
 
   const formattedLastLogin = user.lastLoginDate
             ? new Date(user.lastLoginDate).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })
@@ -36,6 +51,26 @@ if (isChrome) {
 
   const toggleCalendar = () => {
     setCalendarVisible(!calendarVisible);
+  };
+
+  const handleMonthChange = (direction) => {
+    if (direction === "prev") {
+      // Navigate to the previous month
+      if (currentMonth === 1) {
+        setCurrentMonth(12);
+        setCurrentYear(currentYear - 1);
+      } else {
+        setCurrentMonth(currentMonth - 1);
+      }
+    } else if (direction === "next") {
+      // Navigate to the next month
+      if (currentMonth === 12) {
+        setCurrentMonth(1);
+        setCurrentYear(currentYear + 1);
+      } else {
+        setCurrentMonth(currentMonth + 1);
+      }
+    }
   };
 
   return (
@@ -101,34 +136,18 @@ if (isChrome) {
           </div>
         </div>
         <div className="side-wrapper">
-          <div className="project-title">Followings</div>
-          <div className="team-member">
-          <img
-        src="https://images.unsplash.com/flagged/photo-1574282893982-ff1675ba4900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-        alt=""
-        className="members"
-      />
-      <img
-        src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png"
-        alt=""
-        className="members"
-      />
-      <img
-        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        alt=""
-        className="members"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-        alt=""
-        className="members"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-        alt=""
-        className="members"
-      />
-          </div>
+          <div style={{ padding: "20px", textAlign: "center" }}>
+      <h3>
+        Your Streak for {currentMonth < 10 ? `0${currentMonth}` : currentMonth}-{currentYear}
+      </h3>
+      <div style={{ marginBottom: "20px" }}>
+        <button onClick={() => handleMonthChange("prev")}>Previous Month</button>
+        <button onClick={() => handleMonthChange("next")} style={{ marginLeft: "10px" }}>
+          Next Month
+        </button>
+      </div>
+      <StreakCalendar streakData={streakData} year={currentYear} month={currentMonth} />
+    </div>
         </div>
       </div>
       <div className="main-area">
