@@ -915,7 +915,6 @@ main1 {
   }
 
   .left-content {
-    width: 235px;
     grid-area: leftContent;
 		grid-template-rows: 45% 55%;
     padding: 10px 20px 10px;
@@ -924,7 +923,6 @@ main1 {
   margin-top: 0px;
 }
   .right-content {
-    width: 235px;
     grid-area: rightContent;
     grid-template-rows: 5% 30% 30% 20%;
     /* margin: 15px 15px 0 15px;
@@ -946,8 +944,6 @@ main1 {
     gap: 10px;
   }
 
-}
-@media (max-width: 700px){
 }
 @media (max-width: 700px) {
   .left-bottom {

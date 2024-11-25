@@ -179,6 +179,12 @@
   .content{
     margin-left: 30px;
   }
+  .right-content{
+    width: 270px;
+  }
+  .left-content{
+    width: 270px;
+  }
   
 }
 
