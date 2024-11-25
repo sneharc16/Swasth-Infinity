@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddPost.css';
 import creative from "../assets/images/creative.png"
+import { useAuth } from '../store/auth';
 
 const AddPost = () => {
   const [title, setTitle] = useState('');
@@ -28,6 +29,8 @@ const AddPost = () => {
       console.error('Error adding post:', error);
     }
   };
+  const {isLoggedIN} = useAuth();
+  console.log(isLoggedIN);
 
   return (
     <div className="container3">
@@ -36,6 +39,8 @@ const AddPost = () => {
       </div>
       <div className='inner'>
       <h2>Share your creativity</h2>
+      
+      {isLoggedIN ? 
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
           <label>Title:</label>
@@ -50,7 +55,11 @@ const AddPost = () => {
           <input type="file" onChange={(e) => setImage(e.target.files[0])} className="form-control-file" />
         </div>
         <button type="submit" className="btn3 btn3-primary" >Submit</button>
-      </form>
+      </form> : (<>
+                <a href="/register">Login to add a post</a>
+              </>)}
+
+      
       </div>
     </div>
   );

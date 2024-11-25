@@ -2,7 +2,45 @@ import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useAuth } from '../../store/auth';
 import Navbar from '../Navbar/navbar'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import './home.css'; 
+
+
+
+const customIcon = new L.Icon({
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+});
+
+// Sample data for states and fitness events
+const stateData = [
+  {
+    id: 1,
+    name: 'Maharashtra',
+    coordinates: [19.7515, 75.7139],
+    events: [
+      { name: 'Yoga Camp', date: '2024-12-01' },
+      { name: 'Marathon', date: '2024-12-05' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'Karnataka',
+    coordinates: [15.3173, 75.7139],
+    events: [{ name: 'Cycling Event', date: '2024-12-10' }],
+  },
+  {
+    id: 3,
+    name: 'Delhi',
+    coordinates: [28.7041, 77.1025],
+    events: [{ name: 'Zumba Workshop', date: '2024-12-15' }],
+  },
+];
+
 
 const Homesection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,6 +58,8 @@ const Homesection = () => {
     { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e1a66078-1927-4828-b793-15c403d06411', title: 'Yoga' },
     { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7568e0ff-edb5-43dd-bff5-aed405fc32d9', title: 'Swimming' }
   ];
+
+  const [selectedState, setSelectedState] = useState(null);
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -49,25 +89,53 @@ const Homesection = () => {
           <div className="left-bottom">
             <div className="weekly-schedule">
               <h1>Global Fitness Events</h1>
-              <div className="calendar1">
-                {[1, 2, 3, 4].map((activityIndex) => (
-                  <div key={activityIndex} className={`day-and-activity activity-${activityIndex}`}>
-                    <div className="day1">
-                      <h1>{activityIndex * 2 + 11}</h1>
-                      <p>{['mon', 'wed', 'fri', 'sat'][activityIndex - 1]}</p>
-                    </div>
-                    <div className="activity">
-                      <h2>{['Indian Navy Half Marathon', 'The Made of Chennai Run', 'Gurugram Half Marathon', 'River Cyclathon Program'][activityIndex - 1]}</h2>
-                      <div className="participants">
-                        {[1, 2, 3, 4].map((i) => (
-                          <img key={i} src={`https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/${['c61daa1c-5881-43f8-a50f-62be3d235daf', '90affa88-8da0-40c8-abe7-f77ea355a9de', '07d4fa6f-6559-4874-b912-3968fdfe4e5e', 'e082b965-bb88-4192-bce6-0eb8b0bf8e68'][i - 1]}`} style={{ '--i': i }} alt="" />
-                        ))}
-                      </div>
-                    </div>
-                    <button className="btn">Join</button>
-                  </div>
-                ))}
-              </div>
+              <div style={{ display: 'flex', height: '50vh' }}>
+      {/* Map Section */}
+      <MapContainer
+        center={[20.5937, 78.9629]} // Center of India
+        zoom={5}
+        style={{ width: '70%', height: '100%' }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
+        />
+
+        {/* Add Markers for each state */}
+        {stateData.map((state) => (
+          <Marker
+            key={state.id}
+            position={state.coordinates}
+            icon={customIcon}
+            eventHandlers={{
+              click: () => {
+                setSelectedState(state);
+              },
+            }}
+          >
+            <Popup>{state.name}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+
+      {/* Details Section */}
+      <div style={{ width: '30%', padding: '20px', overflowY: 'auto', borderLeft: '1px solid #ccc' }}>
+        {selectedState ? (
+          <div>
+            <h3>{selectedState.name}</h3>
+            <ul>
+              {selectedState.events.map((event, index) => (
+                <li key={index}>
+                  <strong>{event.name}</strong> - {event.date}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p>Click on a state to see fitness events.</p>
+        )}
+      </div>
+    </div>
             </div>
 
             <div className="personal-bests">
@@ -115,6 +183,8 @@ const Homesection = () => {
               </div>
             </div>
           </div>
+
+          
 
           <div className="mobile-personal-bests">
             <h1>Personal Bests</h1>
