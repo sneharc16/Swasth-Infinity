@@ -176,8 +176,37 @@
   .overlay h3{
     font-size: 0.8rem;
   }
+  .content{
+    margin-left: 30px;
+  }
   
 }
+
+@media (max-width: 380px) {
+  /* main {
+    grid-template-columns: 15% 85%;
+  } */
+
+  .nav-text {
+    display: none;
+  }
+  .main-menu{
+    width: 70px;
+    font-size: 1px;
+    margin-right: 10px;
+  }
+  .main-menu h1{
+    font-size: 1rem;
+  }
+  .best-item.box-two p{
+    font-size: 0.8rem;
+  }
+  .overlay h3{
+    font-size: 0.8rem;
+  }
+  
+}
+
 
 /* Circle for User Icon */
 .user-menu {
