@@ -163,6 +163,20 @@
   .nav-text {
     display: none;
   }
+  .main-menu{
+    width: 80px;
+    font-size: 1px;
+  }
+  .main-menu h1{
+    font-size: 1rem;
+  }
+  .best-item.box-two p{
+    font-size: 0.8rem;
+  }
+  .overlay h3{
+    font-size: 0.8rem;
+  }
+  
 }
 
 /* Circle for User Icon */

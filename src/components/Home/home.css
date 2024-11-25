@@ -953,6 +953,9 @@ main1 {
   .left-bottom {
       margin-top: 140px;
   }
+  .main1-menu{
+    width: 80px;
+  }
 }
 @media (max-width: 390px) {
   
