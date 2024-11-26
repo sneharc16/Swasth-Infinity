@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api/auth";
+const API_BASE_URL = "https://sih24-backend.onrender.com/api/auth";
 
 export const registerUser = async (userData,navigate,storetokenInLS) => {
   try {
