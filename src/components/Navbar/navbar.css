@@ -185,6 +185,9 @@
   .left-content{
     width: 270px;
   }
+  .dropdown-menu a{
+    font-size: 0.7rem;
+  }
   
 }
 

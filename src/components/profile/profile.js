@@ -14,6 +14,7 @@ const Profile = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear()); // Current year
 
   const { user } = useAuth(); // Fetch user data from the auth context or store
+  const { isLoggedIN } = useAuth();
 
   // Update streak data when the user data changes
   useEffect(() => {
@@ -74,7 +75,9 @@ if (isChrome) {
   };
 
   return (
-    <div className="container">
+    <div>
+    {isLoggedIN ? (
+      <div className="container">
       <div className="user-profile-area">
         <div className='home-heading'>
           <a href="/">
@@ -109,7 +112,7 @@ if (isChrome) {
           </div>
           <div className="task-status">
             <div className="task-stat">
-              <div className="task-number">{user.streak}</div>
+              <div className="task-number">{user.streak + 1}</div>
               <div className="task-condition">Streaks</div>
               <div className="task-tasks">{formattedLastLogin}</div>
             </div>
@@ -434,6 +437,17 @@ Please let me know if there is any additional information you require from me be
     </div>
         </div>
       </div>
+    </div>) : (<div style={{ 
+  display: 'flex',
+  flexDirection:'column', 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  height: '100vh',
+  width: '100vh', 
+}}>
+      <h1>Login to your profile</h1>
+      <a href='/login'><button style={{fontSize:'1rem'}}>Login</button></a>
+    </div>)}
     </div>
   );
 };

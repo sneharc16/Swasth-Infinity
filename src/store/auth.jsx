@@ -25,14 +25,12 @@ export const AuthProvider = ({ children }) => {
 
      const userAuthentication = async () => {
         try {
-            console.log("logging")
             const response = await fetch(`${baseUrl}/api/auth/user`,{
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            console.log(response);
 
             if(response.ok){
                 const data = await response.json();
