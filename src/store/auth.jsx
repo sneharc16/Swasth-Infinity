@@ -1,5 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+const isLocal = window.location.hostname === 'localhost';
+const baseUrl = isLocal ? 'http://localhost:5000' : 'https://sih24-backend.onrender.com';
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -22,12 +25,14 @@ export const AuthProvider = ({ children }) => {
 
      const userAuthentication = async () => {
         try {
-            const response = await fetch("https://sih24-backend.onrender.com/api/auth/user",{
+            console.log("logging")
+            const response = await fetch(`${baseUrl}/api/auth/user`,{
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
+            console.log(response);
 
             if(response.ok){
                 const data = await response.json();
