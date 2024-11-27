@@ -10,6 +10,9 @@ import Tracker from "./pages/trackersheet/Tracker";
 import User from "./pages/login";
 import Create from "./pages/register";
 import Logout from "./pages/logout";
+import AdminRegister from './components/admin/admin-register';
+import Adminlogin from './components/admin/admin-login';
+import AdminDashboard from './components/admin/admin-dashboard';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/register" element={<Create/>} />
           <Route path="/login" element={<User/>} />
           <Route path="/logout" element={<Logout/>} />
+          <Route path="/adminregister" element={<AdminRegister/>} />
+          <Route path="/adminlogin" element={<Adminlogin/>} />
+          <Route path="/dashboard" element={<AdminDashboard/>} />
           {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>
