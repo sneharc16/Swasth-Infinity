@@ -125,8 +125,7 @@
 
 
 .section-plans {
-  background-color: #ffffff;
-  grid-template-columns: repeat(auto-fill, minmax(70rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(70rem, 2fr));
 }
 
 .card2 {
@@ -445,6 +444,9 @@
   .section-plans{
     display: contents;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+  .row .col-1-of-4{
+    width: 230px;
   }
 }
 /* @media (max-width: 420px){

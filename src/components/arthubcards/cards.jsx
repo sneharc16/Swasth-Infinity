@@ -10,7 +10,7 @@ import post8 from "../../assets/images/post8.jpeg"
 
 export const Cards = () =>{
 
-const section = document.createElement('section');
+const sectionarthub = document.createElement('sectionarthub');
 
 // Array of image 
 const imageUrls = [
@@ -106,11 +106,11 @@ for (let i = 0; i < imageUrls.length; i++) {
   // Append article to anchor
   anchor.appendChild(article);
 
-  // Append anchor to section
-  section.appendChild(anchor);
+  // Append anchor to sectionarthub
+  sectionarthub.appendChild(anchor);
 }
 
-// Append section to the document body
-document.body.appendChild(section);
-return section;
+// Append sectionarthub to the document body
+document.body.appendChild(sectionarthub);
+return sectionarthub;
 }
