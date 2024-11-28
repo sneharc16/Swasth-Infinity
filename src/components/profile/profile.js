@@ -112,7 +112,7 @@ if (isChrome) {
           </div>
           <div className="task-status">
             <div className="task-stat">
-              <div className="task-number">{user.streak + 1}</div>
+              <div className="task-number">{user.streak}</div>
               <div className="task-condition">Streaks</div>
               <div className="task-tasks">{formattedLastLogin}</div>
             </div>
