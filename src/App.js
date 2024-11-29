@@ -15,6 +15,7 @@ import Adminlogin from "./components/admin/admin-login";
 import AdminDashboard from "./components/admin/admin-dashboard";
 import Yoga from "./components/yogahealth/yoga";
 import RecipeSection from "./components/recipesection/RecipeSection";
+import Shefit from "./components/shefit/shefit";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/yoga" element={<Yoga />} />
           <Route path="/recipe" element={<RecipeSection />} />
+          <Route path="/shefit" element={<Shefit />} />
           {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>

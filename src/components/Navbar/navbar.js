@@ -60,7 +60,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
+            <a href="/shefit" onClick={() => setActiveIndex(5)}>
               <i className="fas fa-venus"></i>
               <span className="nav-text">SheFit</span>
             </a>
@@ -112,7 +112,6 @@ const Navbar = () => {
                 <a href="/register">Register</a>
                 <a href="/login">Login</a>
               </>)}
-              
               
             </div>
           )}

@@ -89,7 +89,7 @@ const Homesection = () => {
           <div className="left-bottom">
             <div className="weekly-schedule">
               <h1>Global Fitness Events</h1>
-              <div style={{ display: 'flex', height: '50vh' }}>
+              <div style={{ display: 'flex', height: '45vh' }}>
       {/* Map Section */}
       <MapContainer
         center={[20.5937, 78.9629]} // Center of India
