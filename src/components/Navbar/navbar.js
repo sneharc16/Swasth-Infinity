@@ -103,7 +103,7 @@ const Navbar = () => {
 
         <div className="user-menu">
           <div className="user-icon-circle" onClick={toggleDropdown}>
-            <i className="fa fa-user"></i>
+            <i className="fas fa-user-cog"></i>
           </div>
           {showDropdown && (
             <div className="dropdown-menu">
