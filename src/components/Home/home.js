@@ -252,17 +252,20 @@ const Homesection = () => {
           </div>
           <div class="friends-activity">
             <h1>Daily Fitness Blogs</h1>
-            <div class="card1-container">
+            <div href="/blog1"class="card1-container">
+            <a href='/blog1'>
               <div class="card1">
                 <div class="card1-user-info">
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9290037d-a5b2-4f50-aea3-9f3f2b53b441" alt="" />
+                  <img href="/blog1"src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9290037d-a5b2-4f50-aea3-9f3f2b53b441" alt="" />
                   <h2>Jane</h2>
                 </div>
                 <img class="card1-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/bef54506-ea45-4e42-a1b6-23a48f61c5e8" alt="" />
                 <p>We completed the 30-Day Running Streak Challenge!🏃‍♀️🎉</p>
               </div>
+              </a>
 
-              <div class="card1 card1-two">
+<a href='/blog2'>
+              <div href="/blog2" class="card1 card1-two">
                 <div class="card1-user-info">
                   <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/42616ef2-ba96-49c7-80ea-c3cf1e2ecc89" alt="" />
                   <h2>Mike</h2>
@@ -270,6 +273,7 @@ const Homesection = () => {
                 <img class="card1-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2dcc1b94-06c5-4c62-b886-53b9e433fd44" alt="" />
                 <p>I just set a new record in cycling: 30 miles!💪</p>
               </div>
+              </a>
             </div>
           </div>
         </div>

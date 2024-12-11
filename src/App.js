@@ -15,12 +15,13 @@ import Adminlogin from "./components/admin/admin-login";
 import AdminDashboard from "./components/admin/admin-dashboard";
 import Yoga from "./components/yogahealth/yoga";
 import RecipeSection from "./components/recipesection/RecipeSection";
-// import Shefit from "./components/shefit/shefit";
 import Yogacv from "./pages/Yoga/Yoga";
 import About from "./components/aboutus/aboutus"
 import TennisWorld from "./components/activitypages/newpage";
 import MeditationWorld from "./components/activitypages/newpage copy";
-import MenstrualCycleTracker from "./components/shefit/shefit"
+import MenstrualCycleTracker from "./components/shefit/shefit";
+import BlogPost from "./components/homeblogs/blogs";
+import BlogPost2 from "./components/homeblogs/blogs2";
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
           <Route path="/she" element={<MenstrualCycleTracker />} />
           <Route path="/start" element={<Yogacv />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog1" element={<BlogPost />} />
+          <Route path="/blog2" element={<BlogPost2 />} />
           <Route path="/tennis" element={<TennisWorld />} />
           <Route path="/meditation" element={<MeditationWorld />} />
           {/* <Route index={true} element={<Arthub/>} /> */}
