@@ -192,6 +192,10 @@
     .tracker-container{
         width:300px;
     }
+    .card:hover {
+        transform: scale(1.001); /* Zoom effect */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
    }
    @media screen and (max-width: 390px){
     .tracker-container{
