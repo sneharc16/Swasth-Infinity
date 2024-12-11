@@ -4,6 +4,7 @@ import two from "../../assets/two.jpg";
 import three from "../../assets/three.jpg";
 import four from "../../assets/four.jpg";
 import five from "../../assets/five.jpg";
+import six from "../../assets/six.jpg";
 import Navbar from "../Navbar/navbar";
 import "./shefit.css";
 
@@ -82,9 +83,13 @@ const MenstrualCycleTracker = () => {
   };
 
   return (
+    <div style={{backgroundColor: "rgb(73, 57, 113)",
+      minHeight: "100vh",}}>
     <div style={{display:"flex"}}>
     <Navbar/>
       {/* Menstrual Cycle Tracker Section */}
+
+      <div className="shepage" style={{display:"flex"}}>
       <div className="tracker-section">
         <div className="tracker-container">
           <h1>Menstrual Cycle Tracker</h1>
@@ -144,9 +149,14 @@ const MenstrualCycleTracker = () => {
             <div className="card">
               <img src={five} alt="Myth 1" />
             </div>
+            <div className="card">
+              <img src={six} alt="Myth 1" />
+            </div>
           </div>
         </div>
       </div>
+      </div>
+    </div>
     </div>
   );
 };

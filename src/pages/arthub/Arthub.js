@@ -21,8 +21,13 @@ export const Arthub = () => {
 }, []); 
     return (
         <>
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex',}}>
+          <div style={{height: '100vh',
+            top: 0,
+            position: 'sticky',
+            zIndex: 1000, }}> 
        <Navbar />
+       </div>
           <div className="App">
       <main>
         <PostList />

@@ -65,3 +65,35 @@
 #my-canvas {
     transform: rotateY(180deg);
 }
+
+@media (max-width: 500px) {
+    .instructions-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instructions-list{
+        width: 70%;
+        margin-left: 60px;
+    }
+    .performance-container{
+        margin-top: 30px;
+        left:60px !important;
+    }
+    #my-canvas{
+        width:320px;
+        left:60px !important;
+        height: 280px;
+    }
+
+    #webcam{
+        width:320px;
+        height:280px;
+        left:60px !important;
+    }
+    .pose-img{
+        top:500px;
+        width:300px;
+        right:60px !important;
+    } 
+  }

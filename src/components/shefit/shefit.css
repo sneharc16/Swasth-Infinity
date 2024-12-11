@@ -1,14 +1,13 @@
-/* App.css */
-body{
-    background: rgb(73, 57, 113);
-  }
+
   h2{
     text-align:center;
     color: #d0c3f2;
-    font-family: cursive;
     font-size:  50px;
   }
   /* General container styles */
+  .tracker-section{
+    margin-left: 100px;
+  }
   .tracker-container {
       font-family: Arial, sans-serif;
       max-width: 700px;
@@ -20,6 +19,7 @@ body{
       border: 5px solid #ddd;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20%;
   }
   
   /* Title */
@@ -137,6 +137,9 @@ body{
       }
   }
   /* Myth vs Fact Grid with Images */
+  .myth-fact-section{
+    margin-left: 200px;
+  }
   .myth-fact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -175,3 +178,15 @@ body{
       line-height: 1.4;
       padding: 10px;
   }
+
+  @media screen and (max-width: 500px) {
+    .shepage{
+        flex-direction: column;
+    }
+    .tracker-section{
+        margin-left: 0px;
+    }
+    .myth-fact-section{
+        margin-left: 0px;
+    }
+   }

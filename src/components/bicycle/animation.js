@@ -128,6 +128,8 @@ const AnimatedComponent = () => {
       }, []);
 
   return (
+	<div style={{backgroundColor: "rgb(73, 57, 113)",
+        minHeight: "100vh",}}>
     <div>
       {/* Your SVG elements and other components go here */}
       <svg version="1.1" id="Layer_1" x="0px" y="0px"
@@ -369,6 +371,7 @@ const AnimatedComponent = () => {
 </svg>
 
     </div>
+	</div>
   );
 };
 

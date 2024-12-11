@@ -34,10 +34,10 @@
 }
 @media(max-width: 500px){
   .video{
-    width:250px;
+    width:300px;
     max-height: 100%; 
     margin-top:40px;
-    margin-left:15px;
+    margin-left:20px;
     border-radius:15px;
  }
  .videodiv{
@@ -50,5 +50,7 @@
   }
   .playbtn{
     margin-left: 0px !important;
+    width:120px !important;
+    font-size: 1rem;
   }
 }

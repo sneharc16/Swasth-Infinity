@@ -48,3 +48,20 @@
   margin-top: 5px;
   font-size: 14px;
 }
+
+@media (max-width: 500px) {
+  .App h1{
+    font-size:2rem;
+  }
+  .App h2{
+    font-size: 1.4rem;
+  }
+  .css-b62m3t-container{
+    width: 300px;
+    margin-left: 50px;
+  }
+  .suggestions p{
+    width: 200px;
+    margin-left: 80px;
+  }
+}

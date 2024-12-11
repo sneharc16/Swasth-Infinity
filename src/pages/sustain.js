@@ -14,8 +14,10 @@ const Card = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div style={{height:"100vh",top:0,position:"sticky"}} >
       <Navbar />
+      </div>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <div className='videodiv' style={{display:'flex' , flexDirection:'row'}}>
           <video 

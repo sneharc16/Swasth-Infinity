@@ -294,11 +294,13 @@ function Yogacv() {
 
   return (
     <div style={{ display: "flex" }}>
-  <div style={{ width: "8%"}}>
+  <div style={{ width: "8%", height:"100vh",top:0,position:"sticky"}}>
     <Navbar />
   </div>
-  <div style={{ width: "100%" }} className="yoga-container">
+  <div style={{ width: "92%" }} className="yoga-container">
+    <div style={{backgroundColor: "rgba(255, 255, 255, 0.1)", borderRadius:"10px", marginBottom:"100px"}}>
 <Yoga/>
+</div>
     <DropDown poseList={poseList} currentPose={currentPose} setCurrentPose={setCurrentPose} />
     <Instructions currentPose={currentPose} />
     <button onClick={startYoga} className="secondary-btn">
