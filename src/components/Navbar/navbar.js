@@ -62,7 +62,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
+            <a href="she" onClick={() => setActiveIndex(5)}>
               <i className="fas fa-venus"></i>
               <span className="nav-text">SheFit</span>
             </a>

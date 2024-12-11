@@ -15,11 +15,12 @@ import Adminlogin from "./components/admin/admin-login";
 import AdminDashboard from "./components/admin/admin-dashboard";
 import Yoga from "./components/yogahealth/yoga";
 import RecipeSection from "./components/recipesection/RecipeSection";
-import Shefit from "./components/shefit/shefit";
+// import Shefit from "./components/shefit/shefit";
 import Yogacv from "./pages/Yoga/Yoga";
 import About from "./components/aboutus/aboutus"
 import TennisWorld from "./components/activitypages/newpage";
 import MeditationWorld from "./components/activitypages/newpage copy";
+import MenstrualCycleTracker from "./components/shefit/shefit"
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/yoga" element={<Yoga />} />
           <Route path="/recipe" element={<RecipeSection />} />
-          <Route path="/shefit" element={<Shefit />} />
+          <Route path="/she" element={<MenstrualCycleTracker />} />
           <Route path="/start" element={<Yogacv />} />
           <Route path="/about" element={<About />} />
           <Route path="/tennis" element={<TennisWorld />} />
