@@ -189,4 +189,20 @@
     .myth-fact-section{
         margin-left: 0px;
     }
+    .tracker-container{
+        width:300px;
+    }
+   }
+   @media screen and (max-width: 390px){
+    .tracker-container{
+        width:250px;
+    }
+    .day{
+        padding: 2px;
+        font-size: 0.5rem;
+    }
+    .day-header{
+        padding: 5px;
+        font-size:0.5rem;
+    }
    }

@@ -1,7 +1,7 @@
 .App {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 5px;
 }
 
 .dropdown-container {
@@ -54,14 +54,14 @@
     font-size:2rem;
   }
   .App h2{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .css-b62m3t-container{
-    width: 300px;
+    width: 250px;
     margin-left: 50px;
   }
   .suggestions p{
     width: 200px;
-    margin-left: 80px;
+    margin-left: 60px;
   }
 }
