@@ -51,17 +51,22 @@
 
 @media (max-width: 500px) {
   .App h1{
-    font-size:2rem;
+    font-size:1.5rem;
+    margin-left: 30px;
   }
   .App h2{
     font-size: 1.2rem;
+    margin-left: 20px;
   }
   .css-b62m3t-container{
     width: 250px;
-    margin-left: 50px;
+    margin-left: 80px;
+  }
+  .fetch-button{
+    margin-left:20px;
   }
   .suggestions p{
     width: 200px;
-    margin-left: 60px;
+    margin-left: 100px;
   }
 }
