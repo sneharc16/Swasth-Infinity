@@ -2,6 +2,7 @@ import * as poseDetection from "@tensorflow-models/pose-detection";
 import * as tf from "@tensorflow/tfjs";
 import React, { useRef, useState, useEffect } from "react";
 import Navbar from "../../components/Navbar/navbar";
+import Yoga from "../../components/yogahealth/yoga"
 
 // set the backend
 import backend from "@tensorflow/tfjs-backend-webgl";
@@ -297,6 +298,7 @@ function Yogacv() {
     <Navbar />
   </div>
   <div style={{ width: "100%" }} className="yoga-container">
+<Yoga/>
     <DropDown poseList={poseList} currentPose={currentPose} setCurrentPose={setCurrentPose} />
     <Instructions currentPose={currentPose} />
     <button onClick={startYoga} className="secondary-btn">

@@ -36,7 +36,7 @@ h2{
 
 /*********** Start of Header Part ***********/
 
-.header{
+/* .header{
 	height: 100%;
 	height: 100vh;
 	background-image: linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3)), url('https://i.postimg.cc/HxPJ12nQ/header-bg.jpg');
@@ -44,7 +44,7 @@ h2{
 	background-size: 100% 100%;
 	position: relative;
 	clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
-}
+} */
 
 .header:before{
 	content: '';
@@ -58,27 +58,8 @@ h2{
 	opacity: 0.2;
 }
 
-.navbar:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: -1;
-	background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
-	opacity: 0.8;
-}
 
-.nav-item a{
-	color: #000;
-	font-weight: 600;
-}
 
-.navbar-brand{
-	font-weight: bold;
-	font-size: 25px;
-}
 
 
 

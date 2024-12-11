@@ -41,9 +41,9 @@ function Yoga() {
 
   return (
     <div className="App">
-      <h1>Yoga Pose Suggestions</h1>
+      <h1 style={{color:"white"}}>Yoga Pose Suggestions</h1>
       <div className="dropdown-container">
-        <h2>Select Health Problems</h2>
+        <h2 style={{color:"white"}}>Select Health Problems</h2>
         <Select
           isMulti
           options={healthProblems}
@@ -56,7 +56,7 @@ function Yoga() {
         Get Suggestions
       </button>
       <div className="suggestions">
-        <h2>Yoga Suggestions</h2>
+        <h2 style={{color:"white"}}>Yoga Suggestions</h2>
         {suggestions.length > 0 ? (
           <div className="yoga-list">
             {suggestions.map((suggestion, index) => (
@@ -70,7 +70,7 @@ function Yoga() {
             ))}
           </div>
         ) : (
-          <p>No suggestions to display. Please select health problems.</p>
+          <p style={{color:"white"}}>No suggestions to display. Please select health problems.</p>
         )}
       </div>
     </div>
