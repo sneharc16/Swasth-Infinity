@@ -6,12 +6,12 @@ import RecipeSection from '../components/recipesection/RecipeSection';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 13% 85%;
 `;
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 34% 51%;
+  grid-template-columns: 54% 47%;
 @media (max-width: 768px) {
     display: flex;
     flex-direction : column-reverse;

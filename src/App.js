@@ -17,6 +17,7 @@ import Yoga from "./components/yogahealth/yoga";
 import RecipeSection from "./components/recipesection/RecipeSection";
 import Shefit from "./components/shefit/shefit";
 import Yogacv from "./pages/Yoga/Yoga";
+import About from "./components/aboutus/aboutus"
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/recipe" element={<RecipeSection />} />
           <Route path="/shefit" element={<Shefit />} />
           <Route path="/start" element={<Yogacv />} />
+          <Route path="/about" element={<About />} />
           {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>

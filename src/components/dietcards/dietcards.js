@@ -8,31 +8,7 @@ const CustomPatterns = () => {
 
       <div className="row">
         
-        <div className="col-1-of-4">
-          <div className="card2">
-            <div className="card2__side card2__side--front-1">
-              <div className="card2__title card2__title--1">
-                {/* <i className="fas fa-paper-plane"></i> */}
-                <h4 className="card2__heading">Maggi</h4>
-              </div>
-              <div className="card2__details">
-                <ul>
-                  <li>Is that quick Maggi fix really worth sabotaging your long-term health goals? Why let your 30-minute yoga session go to waste?</li>
-                </ul>
-              </div>
-            </div>
-            <div className="card2__side card2__side--back card2__side--back-1">
-              <div className="card2__cta">
-              <div className="card2__details">
-                <ul>
-                  <li>Vermicelli upma is a lighter, less processed option, with added veggies that offer more fiber and nutrients.</li>
-                </ul>
-              </div>
-                <a href="#popup" className="btn btn--white">Add to Diet</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         <div className="col-1-of-4">
           <div className="card2">
@@ -90,31 +66,7 @@ const CustomPatterns = () => {
       </div>
       <div className="row">
         
-        <div className="col-1-of-4">
-          <div className="card2">
-            <div className="card2__side card2__side--front-5">
-              <div className="card2__title card2__title--5">
-                {/* <i className="fas fa-paper-plane"></i> */}
-                <h4 className="card2__heading">SubWay</h4>
-              </div>
-              <div className="card2__details">
-                <ul>
-                  <li>Subway may sound healthy, but with all that processed bread and sauces, you’re undoing all your fitness progress.</li>
-                </ul>
-              </div>
-            </div>
-            <div className="card2__side card2__side--back card2__side--back-5">
-              <div className="card2__cta">
-              <div className="card2__details">
-                <ul>
-                  <li>Paneer rolls with whole wheat roti are a cleaner, fresher, and more balanced meal that provides protein without excess calories or additives.</li>
-                </ul>
-              </div>
-                <a href="#popup" className="btn btn--white">Add to Diet</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         <div className="col-1-of-4">
           <div className="card2">
@@ -222,6 +174,63 @@ const CustomPatterns = () => {
           </div>
         </div>
       </div>
+      <div className="row">
+        
+        <div className="col-1-of-4">
+          <div className="card2">
+            <div className="card2__side card2__side--front-5">
+              <div className="card2__title card2__title--5">
+                {/* <i className="fas fa-paper-plane"></i> */}
+                <h4 className="card2__heading">SubWay</h4>
+              </div>
+              <div className="card2__details">
+                <ul>
+                  <li>Subway may sound healthy, but with all that processed bread and sauces, you’re undoing all your fitness progress.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="card2__side card2__side--back card2__side--back-5">
+              <div className="card2__cta">
+              <div className="card2__details">
+                <ul>
+                  <li>Paneer rolls with whole wheat roti are a cleaner, fresher, and more balanced meal that provides protein without excess calories or additives.</li>
+                </ul>
+              </div>
+                <a href="#popup" className="btn btn--white">Add to Diet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-1-of-4">
+          <div className="card2">
+            <div className="card2__side card2__side--front-1">
+              <div className="card2__title card2__title--1">
+                {/* <i className="fas fa-paper-plane"></i> */}
+                <h4 className="card2__heading">Maggi</h4>
+              </div>
+              <div className="card2__details">
+                <ul>
+                  <li>Is that quick Maggi fix really worth sabotaging your long-term health goals? Why let your 30-minute yoga session go to waste?</li>
+                </ul>
+              </div>
+            </div>
+            <div className="card2__side card2__side--back card2__side--back-1">
+              <div className="card2__cta">
+              <div className="card2__details">
+                <ul>
+                  <li>Vermicelli upma is a lighter, less processed option, with added veggies that offer more fiber and nutrients.</li>
+                </ul>
+              </div>
+                <a href="#popup" className="btn btn--white">Add to Diet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+      
     </section>
   );
 };

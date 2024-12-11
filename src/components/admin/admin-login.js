@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginAdmin } from "../../services/api";
 import { useAuth } from "../../store/auth";
 
@@ -7,7 +7,7 @@ const Adminlogin = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const {storetokenInLS} = useAuth();
+  const { storetokenInLS } = useAuth();
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -15,24 +15,38 @@ const Adminlogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res_data = await loginAdmin(credentials,navigate,storetokenInLS);
+    const res_data = await loginAdmin(credentials, navigate, storetokenInLS);
     setMessage(res_data.message || "An error occurred");
-    if(res_data.error){
+    if (res_data.error) {
       setMessage(res_data.message || "An error occurred");
-    }else{
-      setMessage("Login successfully by login");
+    } else {
+      setMessage("Login successful!");
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Login</button>
+    <div className="custom-container">
+      <h2 className="custom-heading">Login</h2>
+      <form className="custom-form" onSubmit={handleSubmit}>
+        <input
+          className="custom-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          required
+        />
+        <input
+          className="custom-input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          required
+        />
+        <button className="custom-button" type="submit">Login</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className="custom-message">{message}</p>}
     </div>
   );
 };

@@ -292,20 +292,18 @@ function Yogacv() {
   }
 
   return (
-    <div style={{display:"flex"}}>
-      <Navbar/>
-    <div className="yoga-container">
-      <DropDown
-        poseList={poseList}
-        currentPose={currentPose}
-        setCurrentPose={setCurrentPose}
-      />
-      <Instructions currentPose={currentPose} />
-      <button onClick={startYoga} className="secondary-btn">
-        Start Pose
-      </button>
-    </div>
-    </div>
+    <div style={{ display: "flex" }}>
+  <div style={{ width: "8%"}}>
+    <Navbar />
+  </div>
+  <div style={{ width: "100%" }} className="yoga-container">
+    <DropDown poseList={poseList} currentPose={currentPose} setCurrentPose={setCurrentPose} />
+    <Instructions currentPose={currentPose} />
+    <button onClick={startYoga} className="secondary-btn">
+      Start Pose
+    </button>
+  </div>
+</div>
   );
 }
 

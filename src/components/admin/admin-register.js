@@ -12,7 +12,6 @@ const AdminRegister = () => {
     fitnessCenterName: "",
     fitnessCenterAddress: "",
   });
-
   const navigate = useNavigate();
   const { storetokenInLS } = useAuth();
 
@@ -24,64 +23,20 @@ const AdminRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await registerAdmin(adminData, navigate, storetokenInLS);
-    if (response.error) {
-      alert(response.message);
-    }
+    if (response.error) alert(response.message);
   };
 
   return (
-    <div>
-      <h2>Admin Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={adminData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={adminData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={adminData.password}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="number"
-          placeholder="number"
-          value={adminData.number}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="fitnessCenterName"
-          placeholder="fitnessCenterName"
-          value={adminData.fitnessCenterName}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="fitnessCenterAddress"
-          placeholder="fitnessCenterAddress"
-          value={adminData.fitnessCenterAddress}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Register</button>
+    <div className="custom-container">
+      <h2 className="custom-heading">Admin Registration</h2>
+      <form onSubmit={handleSubmit} className="custom-form">
+        <input type="text" name="name" placeholder="Name" value={adminData.name} onChange={handleChange} required className="custom-input" />
+        <input type="email" name="email" placeholder="Email" value={adminData.email} onChange={handleChange} required className="custom-input" />
+        <input type="password" name="password" placeholder="Password" value={adminData.password} onChange={handleChange} required className="custom-input" />
+        <input type="text" name="number" placeholder="Number" value={adminData.number} onChange={handleChange} required className="custom-input" />
+        <input type="text" name="fitnessCenterName" placeholder="Fitness Center Name" value={adminData.fitnessCenterName} onChange={handleChange} required className="custom-input" />
+        <input type="text" name="fitnessCenterAddress" placeholder="Fitness Center Address" value={adminData.fitnessCenterAddress} onChange={handleChange} required className="custom-input" />
+        <button type="submit" className="custom-button">Register</button>
       </form>
     </div>
   );

@@ -17,7 +17,7 @@ const Register = () => {
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const {storetokenInLS} = useAuth();
+  const { storetokenInLS } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +27,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const data = { ...formData, medicalComplications: formData.medicalComplications.split(",") };
-      const response = await registerUser(data,navigate,storetokenInLS);
+      const response = await registerUser(data, navigate, storetokenInLS);
 
       if (response?.msg) {
         setMessage(response.msg); 
@@ -43,12 +43,13 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <h2 className="register-heading">Register</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+    <div className="custom-container">
+      <h2 className="custom-heading">Register</h2>
+      <form className="custom-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="firstName"
+          className="custom-input"
           placeholder="First Name"
           value={formData.firstName}
           onChange={handleChange}
@@ -57,6 +58,7 @@ const Register = () => {
         <input
           type="text"
           name="middleName"
+          className="custom-input"
           placeholder="Middle Name"
           value={formData.middleName}
           onChange={handleChange}
@@ -64,6 +66,7 @@ const Register = () => {
         <input
           type="text"
           name="lastName"
+          className="custom-input"
           placeholder="Last Name"
           value={formData.lastName}
           onChange={handleChange}
@@ -72,6 +75,7 @@ const Register = () => {
         <input
           type="email"
           name="email"
+          className="custom-input"
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
@@ -80,6 +84,7 @@ const Register = () => {
         <input
           type="number"
           name="age"
+          className="custom-input"
           placeholder="Age"
           value={formData.age}
           onChange={handleChange}
@@ -88,11 +93,18 @@ const Register = () => {
         <input
           type="text"
           name="medicalComplications"
+          className="custom-input"
           placeholder="Medical Complications (comma-separated)"
           value={formData.medicalComplications}
           onChange={handleChange}
         />
-        <select name="gender" value={formData.gender} onChange={handleChange} required>
+        <select 
+          name="gender" 
+          className="custom-input"
+          value={formData.gender} 
+          onChange={handleChange} 
+          required
+        >
           <option value="">Select Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -101,14 +113,15 @@ const Register = () => {
         <input
           type="password"
           name="password"
+          className="custom-input"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
           required
         />
-        <button className="register-button" type="submit">Register</button>
+        <button className="custom-button" type="submit">Register</button>
       </form>
-      {message && <p className="register-message">{typeof message === "string" ? message : JSON.stringify(message)}</p>}
+      {message && <p className="custom-message">{typeof message === "string" ? message : JSON.stringify(message)}</p>}
     </div>
   );
 };

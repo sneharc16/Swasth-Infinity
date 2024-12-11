@@ -1,12 +1,11 @@
 .yoga-container {
     background: rgb(73, 57, 113);
-    min-width: 100vw;
-    min-height: 100vh;
+    /* min-width: 100vw;
+    min-height: 100vh; */
 }
 
 .secondary-btn {
     position: relative;
-    left: 45%;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     border-color: rgba(125, 125, 125, 0.1);

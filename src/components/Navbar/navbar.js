@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../store/auth';
-import speaker from "../../assets/speaker.png"
-import audio2 from "../../assets/audio2.mp3"
+import speaker from "../../assets/speaker.png";
+import audio2 from "../../assets/audio2.mp3";
 import './navbar.css'; 
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(false);  // To toggle chatbot visibility
   const { isLoggedIN } = useAuth();
 
   const toggleDropdown = () => setShowDropdown((prev) => !prev);
+  const toggleChatbot = () => setShowChatbot(!showChatbot);  // Toggle function for chatbot visibility
 
   return (
     <main>
@@ -60,7 +62,7 @@ const Navbar = () => {
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
             <b></b>
             <b></b>
-            <a href="/shefit" onClick={() => setActiveIndex(5)}>
+            <a href="SheFit/index.html" onClick={() => setActiveIndex(5)}>
               <i className="fas fa-venus"></i>
               <span className="nav-text">SheFit</span>
             </a>
@@ -73,32 +75,28 @@ const Navbar = () => {
               <span className="nav-text">Profile</span>
             </a>
           </li>
-
           <li className={`nav-item ${activeIndex === 7 ? 'active' : ''}`}>
-      <b></b>
-      <b></b>
-      {/* Clickable image that plays audio */}
-      <div onClick={() => {
-  const audioElement = document.getElementById('audioPlayer');
-  if (audioElement) {
-    audioElement.play().catch(error => {
-      console.log('Audio playback failed:', error);
-    });
-  }
-}}>
-        <img 
-          src={speaker}
-          alt="Play Audio" 
-          style={{ width: '50px', height: '40px', cursor: 'pointer', backgroundColor:'white' , borderRadius:'50px'}} 
-        />
-      </div>
-      {/* Hidden audio player */}
-      <audio id="audioPlayer">
-        <source src={audio2} type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-      
+            <b></b>
+            <b></b>
+            <div onClick={() => {
+              const audioElement = document.getElementById('audioPlayer');
+              if (audioElement) {
+                audioElement.play().catch(error => {
+                  console.log('Audio playback failed:', error);
+                });
+              }
+            }}>
+              <img 
+                src={speaker}
+                alt="Play Audio" 
+                style={{ width: '50px', height: '40px', cursor: 'pointer', backgroundColor:'white', borderRadius:'50px'}} 
+              />
+            </div>
+            <audio id="audioPlayer">
+              <source src={audio2} type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+          </li>
         </ul>
 
         <div className="user-menu">
@@ -106,17 +104,57 @@ const Navbar = () => {
             <i className="fas fa-user-cog"></i>
           </div>
           {showDropdown && (
-            <div className="dropdown-menu">
-
+            <div className="dropdown-menu-nav">
               {isLoggedIN ? (<a href="/logout">Logout</a>) : (<>
                 <a href="/register">Register</a>
                 <a href="/login">Login</a>
               </>)}
-              
             </div>
           )}
         </div>
       </nav>
+
+      {/* Chatbot Icon */}
+      <div 
+        className="chatbot-icon" 
+        onClick={toggleChatbot} 
+        style={{ 
+          position: 'fixed', 
+          bottom: '20px', 
+          right: '20px', 
+          backgroundColor: '#e1bee7', 
+          borderRadius: '50%', 
+          padding: '10px', 
+          cursor: 'pointer' 
+        }}
+      >
+        <i className="fas fa-comment-alt" style={{ color: 'rgb(57,73,117)', fontSize: '24px' }}></i>
+      </div>
+
+      {/* Chatbot iframe */}
+      {showChatbot && (
+        <div 
+          className="chatbot-container" 
+          style={{ 
+            position: 'fixed', 
+            bottom: '70px', 
+            right: '20px', 
+            width: '350px', 
+            height: '500px', 
+            backgroundColor: 'white', 
+            borderRadius: '8px', 
+            boxShadow: '0 4px 8px rgba(0,0,0,0.2)', 
+            zIndex: 9999
+          }}
+        >
+          <iframe
+            src="https://www.chatbase.co/chatbot-iframe/ADV93zEpeXv-8WlwW2wJB"
+            width="100%"
+            style={{ height: '100%' }}
+            frameBorder="0"
+          ></iframe>
+        </div>
+      )}
     </main>
   );
 }

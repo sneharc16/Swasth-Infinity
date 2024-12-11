@@ -183,7 +183,7 @@
   .left-content{
     width: 270px;
   }
-  .dropdown-menu a{
+  .dropdown-menu-nav a{
     font-size: 0.7rem;
   }
   
@@ -239,7 +239,7 @@
 }
 
 /* Dropdown Menu */
-.dropdown-menu {
+.dropdown-menu-nav {
   position: absolute;
   top: 45px;
   right:0;
@@ -252,7 +252,7 @@
   z-index: 1000;
 }
 
-.dropdown-menu a {
+.dropdown-menu-nav a {
   display: block;
   border: 0.01rem solid rgb(120, 120, 120);
   background-color: #ffffff;
@@ -263,6 +263,6 @@
   text-decoration: none;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu-nav a:hover {
   background-color: #7b4499;
 }

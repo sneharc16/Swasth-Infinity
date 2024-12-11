@@ -398,8 +398,8 @@
 }
 
 .row {
-  max-width: 75rem;
-  margin: 90px;
+  /* max-width: 75rem; */
+  margin: 80px;
   margin-bottom: 0px !important;
 }
 
@@ -418,7 +418,7 @@
 }
 
 .row [class^="col-"]:not(:last-child) {
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
