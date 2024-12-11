@@ -18,6 +18,8 @@ import RecipeSection from "./components/recipesection/RecipeSection";
 import Shefit from "./components/shefit/shefit";
 import Yogacv from "./pages/Yoga/Yoga";
 import About from "./components/aboutus/aboutus"
+import TennisWorld from "./components/activitypages/newpage";
+import MeditationWorld from "./components/activitypages/newpage copy";
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
           <Route path="/shefit" element={<Shefit />} />
           <Route path="/start" element={<Yogacv />} />
           <Route path="/about" element={<About />} />
+          <Route path="/tennis" element={<TennisWorld />} />
+          <Route path="/meditation" element={<MeditationWorld />} />
           {/* <Route index={true} element={<Arthub/>} /> */}
         </Routes>
       </LoaderWrapper>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useAuth } from '../../store/auth';
 import Navbar from '../Navbar/navbar'
@@ -47,17 +48,58 @@ const Homesection = () => {
   const {user} = useAuth();
 
   const activities = [
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/467cf682-03fb-4fae-b129-5d4f5db304dd', title: 'Tennis' },
-    { img: 'https://media.cnn.com/api/v1/images/stellar/prod/220531190304-woman-meditation-stock.jpg?q=w_1110,c_fill', title: 'Meditation' },
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c8e88356-8df5-4ac5-9e1f-5b9e99685021', title: 'Running' },
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/69437d08-f203-4905-8cf5-05411cc28c19', title: 'Cycling' },
-    { img: 'https://www.wfla.com/wp-content/uploads/sites/71/2023/04/GettyImages-828532530.jpg?w=2560&h=1440&crop=1', title: 'Climbing' },
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/3bab6a71-c842-4a50-9fed-b4ce650cb478', title: 'Hiking' },
-    { img: 'https://www.clistudios.com/wp-content/uploads/2021/06/Alyson-Stoner-the-first-step-Candids-10.10.20-2-scaled.jpg', title: 'Dancing' },
-    { img: 'https://www.ruralheritage.com/new_rh_website/images/resources/market_gardening/landing_Pg/mktgardentop_354.jpg', title: 'Gardening' },
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e1a66078-1927-4828-b793-15c403d06411', title: 'Yoga' },
-    { img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7568e0ff-edb5-43dd-bff5-aed405fc32d9', title: 'Swimming' }
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/467cf682-03fb-4fae-b129-5d4f5db304dd',
+      title: 'Tennis',
+      link: '/tennis'
+    },
+    {
+      img: 'https://media.cnn.com/api/v1/images/stellar/prod/220531190304-woman-meditation-stock.jpg?q=w_1110,c_fill',
+      title: 'Meditation',
+      link: '/meditation'
+    },
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/c8e88356-8df5-4ac5-9e1f-5b9e99685021',
+      title: 'Running',
+      link: '/running'
+    },
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/69437d08-f203-4905-8cf5-05411cc28c19',
+      title: 'Cycling',
+      link: '/cycling'
+    },
+    {
+      img: 'https://www.wfla.com/wp-content/uploads/sites/71/2023/04/GettyImages-828532530.jpg?w=2560&h=1440&crop=1',
+      title: 'Climbing',
+      link: '/climbing'
+    },
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/3bab6a71-c842-4a50-9fed-b4ce650cb478',
+      title: 'Hiking',
+      link: '/hiking'
+    },
+    {
+      img: 'https://www.clistudios.com/wp-content/uploads/2021/06/Alyson-Stoner-the-first-step-Candids-10.10.20-2-scaled.jpg',
+      title: 'Dancing',
+      link: '/dancing'
+    },
+    {
+      img: 'https://www.ruralheritage.com/new_rh_website/images/resources/market_gardening/landing_Pg/mktgardentop_354.jpg',
+      title: 'Gardening',
+      link: '/gardening'
+    },
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e1a66078-1927-4828-b793-15c403d06411',
+      title: 'Yoga',
+      link: '/yoga'
+    },
+    {
+      img: 'https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/7568e0ff-edb5-43dd-bff5-aed405fc32d9',
+      title: 'Swimming',
+      link: '/swimming'
+    }
   ];
+  
 
   const [selectedState, setSelectedState] = useState(null);
 
@@ -72,19 +114,23 @@ const Homesection = () => {
 
       <section className="content">
         <div className="left-content">
-          <div className="activities">
-            <h1>Fitness Activities</h1>
-            <div className="activity-container">
-              {activities.map((activity, index) => (
-                <div key={index} className={`image-container img-${index + 1}`}>
-                  <img src={activity.img} alt={activity.title} />
-                  <div className="overlay">
-                    <h3>{activity.title}</h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="activities">
+  <h1>Fitness Activities</h1>
+  <div className="activity-container">
+    {activities.map((activity, index) => (
+      <Link
+        key={index}
+        to={activity.link} // Use 'to' instead of 'href' for React Router
+        className={`image-container img-${index + 1}`}
+      >
+        <img src={activity.img} alt={activity.title} />
+        <div className="overlay">
+          <h3>{activity.title}</h3>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
 
           <div className="left-bottom">
             <div className="weekly-schedule">
