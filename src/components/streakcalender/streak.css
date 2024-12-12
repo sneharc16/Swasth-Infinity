@@ -20,9 +20,11 @@ button:disabled {
 /* streak.css */
 
 /* Calendar container styling */
-.calendar {
+.calendar-streak {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 columns for the days of the week */
+  grid-template-columns: repeat(7, minmax(20px, 1fr)) !important;
+  grid-template-rows: 30px !important;
+    grid-auto-rows: 40px !important; /* 7 columns for the days of the week */
   gap: 8px;
   padding: 20px;
   background-color: #f8f9fa;
@@ -34,8 +36,8 @@ button:disabled {
 
 /* Individual day boxes */
 .day-box {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

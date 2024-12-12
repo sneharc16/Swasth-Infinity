@@ -35,7 +35,7 @@ const StreakCalendar = ({ streakData, year, month }) => {
           <div key={index}>{day}</div>
         ))}
       </div> */}
-      <div className="calendar">
+      <div className="calendar-streak">
         {calendarDays.map((item, index) => (
           <div
             key={index}

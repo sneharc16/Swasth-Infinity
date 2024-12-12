@@ -8,7 +8,7 @@ const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showChatbot, setShowChatbot] = useState(false);  // To toggle chatbot visibility
-  const { isLoggedIN } = useAuth();
+  const { isLoggedIN , user} = useAuth();
 
   const toggleDropdown = () => setShowDropdown((prev) => !prev);
   const toggleChatbot = () => setShowChatbot(!showChatbot);  // Toggle function for chatbot visibility
@@ -59,6 +59,7 @@ const Navbar = () => {
               <span className="nav-text">Serenity</span>
             </a>
           </li>
+          {user && user.gender === 'Female' && (
           <li className={`nav-item ${activeIndex === 5 ? 'active' : ''}`}>
             <b></b>
             <b></b>
@@ -67,6 +68,7 @@ const Navbar = () => {
               <span className="nav-text">SheFit</span>
             </a>
           </li>
+          )}
           <li className={`nav-item ${activeIndex === 6 ? 'active' : ''}`}>
             <b></b>
             <b></b>

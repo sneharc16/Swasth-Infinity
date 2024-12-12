@@ -16,7 +16,7 @@ const LoaderWrapper = ({ children }) => {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust delay as needed
+    }, 500); // Adjust delay as needed
 
     return () => clearTimeout(timer); // Clean up the timer
   }, [location, handleStartLoading]);
