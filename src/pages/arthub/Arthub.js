@@ -4,6 +4,7 @@ import { Cards } from "../../components/arthubcards/cards"
 import PostList from '../../components/PostList';
 import AddPost from '../../components/AddPost';
 import Navbar from '../../components/Navbar/navbar';
+import BreathingMeditation from '../../components/mentalmed/circle';
 
 export const Arthub = () => {
   useEffect(() => {
@@ -29,10 +30,12 @@ export const Arthub = () => {
        <Navbar />
        </div>
           <div className="App">
+          <BreathingMeditation/>
       <main>
         <PostList />
         <AddPost />
       </main>
+      
     </div>
     </div>
         </>
