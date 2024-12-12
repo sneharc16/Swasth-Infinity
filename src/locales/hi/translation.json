@@ -43,7 +43,7 @@
     },
         "globalFitnessEvents": "वैश्विक फिटनेस इवेंट्स",
         "dailySustainCount": "दैनिक स्थिरता गणना",
-        "carbonFootprint": "कार्बन फुटप्रिंट: {{value}}",
+        "carbonFootprint": "शरीर द्रव्यमान सूचकांक: {{value}}",
         "dailyStepCount": "दैनिक कदम गिनती: {{value}}",
         "totalSustainPoints": "कुल स्थिरता अंक: {{value}}",
         "fitnessEventsPlaceholder": "फिटनेस इवेंट्स देखने के लिए किसी राज्य पर क्लिक करें।",        

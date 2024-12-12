@@ -188,10 +188,12 @@ const Homesection = () => {
       <div className="personal-bests">
         <h1>{t('dailySustainCount')}</h1>
         <div className="personal-bests-container">
+          <a href="https://bmiappgit-t9k3jh22sjwktzyz4w7gju.streamlit.app/#health-risk-calculator"> 
           <div className="best-item box-one">
-            <p>{t('carbonFootprint', { value: '1400' })}</p>
+            <p>{t('carbonFootprint', { value: '18.9' })}</p>
             <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
           </div>
+</a>
           <div className="best-item box-two">
             <p>{t('dailyStepCount', { value: '5000' })}</p>
             <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
@@ -217,6 +219,7 @@ const Homesection = () => {
             </a>
           </div>
 
+          <a href='/calorie'>
           <div className="active-calories">
       <h1 style={{ alignSelf: 'flex-start' }}>{t('activeCalories')}</h1>
       <div className="active-calories-container">
@@ -232,6 +235,7 @@ const Homesection = () => {
         </div>
       </div>
     </div>
+    </a>
 
           
 

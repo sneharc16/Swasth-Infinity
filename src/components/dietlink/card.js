@@ -11,7 +11,7 @@ function Card() {
       <p className="card11-text">{t('card.text')}</p>
       <button className="card11-button">
         <a 
-          href="https://huggingface.co/spaces/Shivya0410/Diet_Recommendation_System" 
+          href="https://qdeatavs76ewyztuswrmsi.streamlit.app/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="card11-link"

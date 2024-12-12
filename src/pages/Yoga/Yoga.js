@@ -295,6 +295,7 @@ function Yogacv() {
   }
 
   return (
+    <div>
     <div style={{ display: "flex" }}>
   <div style={{ width: "8%", height:"100vh",top:0,position:"sticky"}}>
     <Navbar />
@@ -309,6 +310,23 @@ function Yogacv() {
    {t('Start Pose')}
     </button>
   </div>
+  
+</div>
+<div className="additional-resources">
+  <h3>Additional Resources</h3>
+  <p>
+    Explore the{" "}
+    <a
+      href="https://drive.google.com/drive/folders/1mv9dJHSXmk1zcphX6xusfzt_X-evx9Uo?usp=sharing" // Replace with the correct URL
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "blue", textDecoration: "underline" }}
+    >
+      Audio Book of Yoga Protocol by Ministry of Ayush
+    </a>
+    .
+  </p>
+</div>
 </div>
   );
 }

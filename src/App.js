@@ -23,6 +23,7 @@ import MenstrualCycleTracker from "./components/shefit/shefit";
 import BlogPost from "./components/homeblogs/blogs";
 import BlogPost2 from "./components/homeblogs/blogs2";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import CalorieTracker from "./components/calorie";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <LanguageSwitcher/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/calorie' element={<CalorieTracker/>} />
           <Route path="/sus" element={<Sustain />} />
           <Route path="/profile" element={<Profilepage />} />
           <Route path="/cards" element={<Cards />} />

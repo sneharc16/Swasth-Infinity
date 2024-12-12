@@ -43,7 +43,7 @@
     }  ,
   "globalFitnessEvents": "Global Fitness Events",
   "dailySustainCount": "Daily Sustain Count",
-  "carbonFootprint": "Carbon Footprint: {{value}}",
+  "carbonFootprint": "BMI: {{value}}",
   "dailyStepCount": "Daily Step Count: {{value}}",
   "totalSustainPoints": "Total Sustain Points: {{value}}",
   "fitnessEventsPlaceholder": "Click on a state to see fitness events.",
