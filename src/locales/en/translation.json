@@ -1,5 +1,6 @@
 {
     "welcome_message": "Welcome to our website",
+    "welcome":"welcome",
     "button_text": "Click me",
     "login": {
       "heading": "Login",
