@@ -1,17 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./circle.css";
-import river from "../../assets/river.mp3";
-import sitar from "../../assets/sitar.mp3";
-import spiritual from "../../assets/spiritual.mp3";
-import bell from "../../assets/bell.mp3";
-import birds from "../../assets/birds.mp3";
 
 const audioOptions = [
-  { id: "none", name: "Select Background Sound", src: null },
-  { id: "nature", name: "Forest Sounds", src: river },
-  { id: "mountain", name: "Mountain Stream", src: sitar },
-  { id: "birds", name: "Bird Chirping", src: birds },
-  { id: "instrumental", name: "Calm Instrumental", src: spiritual },
+  { id: "none", name: "Select Background Sound" },
+  { id: "nature", name: "Forest Sounds" },
+  { id: "mountain", name: "Mountain Stream" },
+  { id: "birds", name: "Bird Chirping" },
+  { id: "instrumental", name: "Calm Instrumental" },
 ];
 
 const BreathingMeditation = () => {
@@ -60,15 +55,14 @@ const BreathingMeditation = () => {
     setSelectedAudio(audioId);
 
     if (audioRef.current) {
-      const selectedOption = audioOptions.find((option) => option.id === audioId);
-
-      if (selectedOption && selectedOption.src) {
-        audioRef.current.src = selectedOption.src;
-        audioRef.current.play();
-        setIsPlaying(true);
-      } else {
+      if (audioId === "none") {
         audioRef.current.pause();
         setIsPlaying(false);
+      } else {
+        // In a real app, you'd set the actual audio source here
+        audioRef.current.src = ""; // Placeholder
+        audioRef.current.play();
+        setIsPlaying(true);
       }
     }
   };
@@ -106,6 +100,24 @@ const BreathingMeditation = () => {
         )}
       </div>
 
+      <svg
+        className="background-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#e0f2fe" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#bae6fd" stopOpacity="0.9" />
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" fill="url(#gradient)" />
+        <circle cx="20" cy="20" r="10" fill="#ffffff" opacity="0.3" />
+        <circle cx="80" cy="30" r="7" fill="#ffffff" opacity="0.2" />
+        <circle cx="50" cy="70" r="5" fill="#ffffff" opacity="0.1" />
+      </svg>
+
       <div
         className="breathing-circle"
         style={{
@@ -119,6 +131,7 @@ const BreathingMeditation = () => {
       </div>
 
       <audio ref={audioRef} loop className="hidden-audio" />
+
       <div className="breath-count">Breath Cycles: {breathCount}</div>
     </div>
   );
