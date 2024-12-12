@@ -129,15 +129,21 @@ if (isChrome) {
           </div>
         </div>
         <div className="side-wrapper">
-          <div className="project-title">Medical Complications</div>
-          <div className="project-name">
-            <div className="project-department">{user.medicalComplications[0]}</div>
-            <div className="project-department">{user.medicalComplications[1]}</div>
-            <div className="project-department">{user.medicalComplications[2]}</div>
-            <div className="project-department">{user.medicalComplications[3]}</div>
-            <div className="project-department">{user.medicalComplications[4]}</div>
-          </div>
+  <div className="project-title">Medical Complications</div>
+  <div className="project-name">
+    {console.log("profile", user)}
+    {user?.medicalComplications && user.medicalComplications.length > 0 ? (
+      user.medicalComplications.map((complication, index) => (
+        <div key={index} className="project-department">
+          {complication || "No data available"}
         </div>
+      ))
+    ) : (
+      <div className="project-department">No medical complications found</div>
+    )}
+  </div>
+</div>
+
         <div className="side-wrapper">
           <div style={{ padding: "20px", textAlign: "center" }}>
       <h3>
