@@ -211,7 +211,9 @@ const Homesection = () => {
               <i className="fa fa-message nav-icon"></i>
             </div>
             <h5>{user.firstName}</h5>
+            <a href='/profile'>
             <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202212/afp_000_9cq7ux_shilpa_shetty_yoga-one_one.jpg?VersionId=DeAg8M98aY9OSz3Z3gVSU84uySM4f245" alt="user" />
+            </a>
           </div>
 
           <div className="active-calories">
