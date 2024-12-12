@@ -22,11 +22,13 @@ import MeditationWorld from "./components/activitypages/newpage copy";
 import MenstrualCycleTracker from "./components/shefit/shefit";
 import BlogPost from "./components/homeblogs/blogs";
 import BlogPost2 from "./components/homeblogs/blogs2";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 function App() {
   return (
     <Router>
       <LoaderWrapper>
+        <LanguageSwitcher/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sus" element={<Sustain />} />

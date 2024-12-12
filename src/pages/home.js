@@ -3,6 +3,7 @@ import Homesection from '../components/Home/home';
 const Home = () => {
   return (
     <div>
+      
       <Homesection/>
     </div>
   );

@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../services/api";
 import { useAuth } from "../../store/auth";
+import { useTranslation } from "react-i18next";
 import "./login.css";
 
 const CustomLogin = () => {
+  const { t } = useTranslation();
   const [customCredentials, setCustomCredentials] = useState({ email: "", password: "" });
   const [customMessage, setCustomMessage] = useState("");
   const navigate = useNavigate();
@@ -28,13 +30,13 @@ const CustomLogin = () => {
 
   return (
     <div className="custom-container">
-      <h2 className="custom-heading">Login</h2>
+      <h2 className="custom-heading">{t("login.heading")}</h2>
       <form className="custom-form" onSubmit={handleCustomSubmit}>
         <input
           className="custom-input"
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder={t("login.emailPlaceholder")}
           onChange={handleCustomChange}
           required
         />
@@ -42,12 +44,12 @@ const CustomLogin = () => {
           className="custom-input"
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder={t("login.passwordPlaceholder")}
           onChange={handleCustomChange}
           required
         />
         <button className="custom-button" type="submit">
-          Login
+        {t("login.buttonText")}
         </button>
       </form>
       {customMessage && <p className="custom-message">{customMessage}</p>}

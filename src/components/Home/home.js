@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useAuth } from '../../store/auth';
-import Navbar from '../Navbar/navbar'
+import Navbar from '../Navbar/navbar';
+import { useTranslation } from "react-i18next";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -44,6 +45,7 @@ const stateData = [
 
 
 const Homesection = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const {user} = useAuth();
 
@@ -115,93 +117,92 @@ const Homesection = () => {
       <section className="content">
         <div className="left-content">
         <div className="activities">
-  <h1>Fitness Activities</h1>
-  <div className="activity-container">
-    {activities.map((activity, index) => (
-      <Link
-        key={index}
-        to={activity.link} // Use 'to' instead of 'href' for React Router
-        className={`image-container img-${index + 1}`}
-      >
-        <img src={activity.img} alt={activity.title} />
-        <div className="overlay">
-          <h3>{activity.title}</h3>
-        </div>
-      </Link>
-    ))}
-  </div>
-</div>
-
-          <div className="left-bottom">
-            <div className="weekly-schedule">
-              <h1>Global Fitness Events</h1>
-              <div style={{ display: 'flex', height: '45vh' }}>
-      {/* Map Section */}
-      <MapContainer
-        center={[20.5937, 78.9629]} // Center of India
-        zoom={5}
-        style={{ width: '70%', height: '100%' }}
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
-        />
-
-        {/* Add Markers for each state */}
-        {stateData.map((state) => (
-          <Marker
-            key={state.id}
-            position={state.coordinates}
-            icon={customIcon}
-            eventHandlers={{
-              click: () => {
-                setSelectedState(state);
-              },
-            }}
-          >
-            <Popup>{state.name}</Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-
-      {/* Details Section */}
-      <div style={{ width: '30%', padding: '20px', overflowY: 'auto', borderLeft: '1px solid #ccc' }}>
-        {selectedState ? (
-          <div>
-            <h3>{selectedState.name}</h3>
-            <ul>
-              {selectedState.events.map((event, index) => (
-                <li key={index}>
-                  <strong>{event.name}</strong> - {event.date}
-                </li>
+            <h1>{t('fitnessActivities')}</h1>
+            <div className="activity-container">
+              {activities.map((activity, index) => (
+                <Link
+                  key={index}
+                  to={activity.link} // Use 'to' instead of 'href' for React Router
+                  className={`image-container img-${index + 1}`}
+                >
+                  <img 
+                    src={activity.img} 
+                    alt={t(`activities.${activity.title}`)}  // Using the translation for each activity title
+                  />
+                  <div className="overlay">
+                    <h3>{t(`activities.${activity.title}`)}</h3> {/* Translated title */}
+                  </div>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
-        ) : (
-          <p>Click on a state to see fitness events.</p>
-        )}
+
+<div className="left-bottom">
+      <div className="weekly-schedule">
+        <h1>{t('globalFitnessEvents')}</h1>
+        <div style={{ display: 'flex', height: '45vh' }}>
+          {/* Map Section */}
+          <MapContainer center={[20.5937, 78.9629]} zoom={5} style={{ width: '70%', height: '100%' }}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
+            />
+
+            {/* Add Markers for each state */}
+            {stateData.map((state) => (
+              <Marker
+                key={state.id}
+                position={state.coordinates}
+                icon={customIcon}
+                eventHandlers={{
+                  click: () => {
+                    setSelectedState(state);
+                  },
+                }}
+              >
+                <Popup>{state.name}</Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+
+          {/* Details Section */}
+          <div style={{ width: '30%', padding: '20px', overflowY: 'auto', borderLeft: '1px solid #ccc' }}>
+            {selectedState ? (
+              <div>
+                <h3>{selectedState.name}</h3>
+                <ul>
+                  {selectedState.events.map((event, index) => (
+                    <li key={index}>
+                      <strong>{event.name}</strong> - {event.date}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p>{t('fitnessEventsPlaceholder')}</p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="personal-bests">
+        <h1>{t('dailySustainCount')}</h1>
+        <div className="personal-bests-container">
+          <div className="best-item box-one">
+            <p>{t('carbonFootprint', { value: '1400' })}</p>
+            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
+          </div>
+          <div className="best-item box-two">
+            <p>{t('dailyStepCount', { value: '5000' })}</p>
+            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
+          </div>
+          <div className="best-item box-three">
+            <p>{t('totalSustainPoints', { value: '300' })}</p>
+            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
+          </div>
+        </div>
       </div>
     </div>
-            </div>
-
-            <div className="personal-bests">
-              <h1>Daily Sustain Count</h1>
-              <div className="personal-bests-container">
-                <div className="best-item box-one">
-                  <p>Carbon Footprint : 1400</p>
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/242bbd8c-aaf8-4aee-a3e4-e0df62d1ab27" alt="" />
-                </div>
-                <div className="best-item box-two">
-                  <p>Daily Step Count : 5000</p>
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/a3b3cb3a-5127-498b-91cc-a1d39499164a" alt="" />
-                </div>
-                <div className="best-item box-three">
-                  <p>Total Sustain Points : 300</p>
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e0ee8ffb-faa8-462a-b44d-0a18c1d9604c" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="right-content">
@@ -217,67 +218,89 @@ const Homesection = () => {
           </div>
 
           <div className="active-calories">
-            <h1 style={{ alignSelf: 'flex-start' }}>Active Calories</h1>
-            <div className="active-calories-container">
-              <div className="box" style={{ '--i': '85%' }}>
-                <div className="circle">
-                  <h2>85<small>%</small></h2>
-                </div>
-              </div>
-              <div className="calories-content">
-                <p><span>Today:</span> 400</p>
-                <p><span>This Week:</span> 3500</p>
-                <p><span>This Month:</span> 14000</p>
-              </div>
-            </div>
+      <h1 style={{ alignSelf: 'flex-start' }}>{t('activeCalories')}</h1>
+      <div className="active-calories-container">
+        <div className="box" style={{ '--i': '85%' }}>
+          <div className="circle">
+            <h2>85<small>%</small></h2>
           </div>
+        </div>
+        <div className="calories-content">
+          <p><span>{t('today')}:</span> 400</p>
+          <p><span>{t('thisWeek')}:</span> 3500</p>
+          <p><span>{t('thisMonth')}:</span> 14000</p>
+        </div>
+      </div>
+    </div>
 
           
 
           <div className="mobile-personal-bests">
-            <h1>Personal Bests</h1>
-            <div className="personal-bests-container">
-              <div className="best-item box-one">
-                <p>Fastest 5K Run: 22min</p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/05dfc444-9ed3-44cc-96af-a9cf195f5820" alt="" />
-              </div>
-              <div className="best-item box-two">
-                <p>Longest Distance Cycling: 4 miles</p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9ca170e9-1252-4fa6-8677-36493540c1f2" alt="" />
-              </div>
-              <div className="best-item box-three">
-                <p>Longest Roller-Skating: 2 hours</p>
-                <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2a7e787c-c12b-49d2-b7fd-72d2c8a3a434" alt="" />
-              </div>
+      <h1>{t('personalBests')}</h1>
+      <div className="personal-bests-container">
+        <div className="best-item box-one">
+          <p>{t('fastest5KRun', { time: '22min' })}</p>
+          <img
+            src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/05dfc444-9ed3-44cc-96af-a9cf195f5820"
+            alt={t('fastest5KRunAlt')}
+          />
+        </div>
+        <div className="best-item box-two">
+          <p>{t('longestDistanceCycling', { distance: '4 miles' })}</p>
+          <img
+            src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9ca170e9-1252-4fa6-8677-36493540c1f2"
+            alt={t('longestDistanceCyclingAlt')}
+          />
+        </div>
+        <div className="best-item box-three">
+          <p>{t('longestRollerSkating', { duration: '2 hours' })}</p>
+          <img
+            src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2a7e787c-c12b-49d2-b7fd-72d2c8a3a434"
+            alt={t('longestRollerSkatingAlt')}
+          />
+        </div>
+      </div>
+    </div>
+    <div className="friends-activity">
+      <h1>{t('dailyFitnessBlogs')}</h1>
+      <div className="card1-container">
+        <a href='/blog1'>
+          <div className="card1">
+            <div className="card1-user-info">
+              <img 
+                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9290037d-a5b2-4f50-aea3-9f3f2b53b441" 
+                alt="" 
+              />
+              <h2>{t('jane')}</h2>
             </div>
-            
+            <img 
+              className="card1-img" 
+              src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/bef54506-ea45-4e42-a1b6-23a48f61c5e8" 
+              alt="" 
+            />
+            <p>{t('completedRunningChallenge')}</p>
           </div>
-          <div class="friends-activity">
-            <h1>Daily Fitness Blogs</h1>
-            <div href="/blog1"class="card1-container">
-            <a href='/blog1'>
-              <div class="card1">
-                <div class="card1-user-info">
-                  <img href="/blog1"src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/9290037d-a5b2-4f50-aea3-9f3f2b53b441" alt="" />
-                  <h2>Jane</h2>
-                </div>
-                <img class="card1-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/bef54506-ea45-4e42-a1b6-23a48f61c5e8" alt="" />
-                <p>We completed the 30-Day Running Streak Challenge!🏃‍♀️🎉</p>
-              </div>
-              </a>
+        </a>
 
-<a href='/blog2'>
-              <div href="/blog2" class="card1 card1-two">
-                <div class="card1-user-info">
-                  <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/42616ef2-ba96-49c7-80ea-c3cf1e2ecc89" alt="" />
-                  <h2>Mike</h2>
-                </div>
-                <img class="card1-img" src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2dcc1b94-06c5-4c62-b886-53b9e433fd44" alt="" />
-                <p>I just set a new record in cycling: 30 miles!💪</p>
-              </div>
-              </a>
+        <a href='/blog2'>
+          <div className="card1 card1-two">
+            <div className="card1-user-info">
+              <img 
+                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/42616ef2-ba96-49c7-80ea-c3cf1e2ecc89" 
+                alt="" 
+              />
+              <h2>{t('mike')}</h2>
             </div>
+            <img 
+              className="card1-img" 
+              src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2dcc1b94-06c5-4c62-b886-53b9e433fd44" 
+              alt="" 
+            />
+            <p>{t('setCyclingRecord')}</p>
           </div>
+        </a>
+      </div>
+    </div>
         </div>
       </section>
     </main1>

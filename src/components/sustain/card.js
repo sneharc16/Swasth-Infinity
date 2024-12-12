@@ -1,29 +1,42 @@
 import React from 'react';
-import './card.css'
+import { useTranslation } from 'react-i18next';
+import './card.css';
 
-function Card() {
+function Yoga() {
+  const { t } = useTranslation();
+
   return (
     <div className='cards-in-set'>
-    <div className="card10">
-      <h4 className="card10-title">Carbon Footprint Counter</h4>
-      <p className="card10-text">Click on the below button to checkout the daily carbon footprint generated based on various fitness activites.</p>
-      <button className="card10-button">
-        <a href="https://huggingface.co/spaces/Manishikha/CarbonFootPrintCalculator" target="_blank" rel="noopener noreferrer" className="card10-link">
-          Calculate
-        </a>
-      </button>
+      <div className="card10">
+        <h4 className="card10-title">{t('cardSection.title1')}</h4>
+        <p className="card10-text">{t('cardSection.text1')}</p>
+        <button className="card10-button">
+          <a
+            href="https://huggingface.co/spaces/Manishikha/CarbonFootPrintCalculator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card10-link"
+          >
+            {t('cardSection.button1')}
+          </a>
+        </button>
+      </div>
+      <div className="card10">
+        <h4 className="card10-title">{t('cardSection.title2')}</h4>
+        <p className="card10-text">{t('cardSection.text2')}</p>
+        <button className="card10-button">
+          <a
+            href="https://huggingface.co/spaces/Manishikha/Dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card10-link"
+          >
+            {t('cardSection.button2')}
+          </a>
+        </button>
+      </div>
     </div>
-    <div className="card10">
-    <h4 className="card10-title">Generate Sustain Points</h4>
-    <p className="card10-text">Click on the below button to generate your daily sustain points to take one step ahed towards sustainability.</p>
-    <button className="card10-button">
-      <a href="https://huggingface.co/spaces/Manishikha/Dashboard" target="_blank" rel="noopener noreferrer" className="card10-link">
-        Generate
-      </a>
-    </button>
-  </div>
-  </div>
   );
 }
 
-export default Card;
+export default Yoga;

@@ -3,6 +3,7 @@ import * as tf from "@tensorflow/tfjs";
 import React, { useRef, useState, useEffect } from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Yoga from "../../components/yogahealth/yoga"
+import { useTranslation } from "react-i18next";
 
 // set the backend
 import backend from "@tensorflow/tfjs-backend-webgl";
@@ -37,6 +38,7 @@ let interval;
 let flag = false;
 
 function Yogacv() {
+  const { t } = useTranslation();
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -286,7 +288,7 @@ function Yogacv() {
           </div>
         </div>
         <button onClick={stopPose} className="secondary-btn">
-          Stop Pose
+        {t('Stop Pose')}
         </button>
       </div>
     );
@@ -304,7 +306,7 @@ function Yogacv() {
     <DropDown poseList={poseList} currentPose={currentPose} setCurrentPose={setCurrentPose} />
     <Instructions currentPose={currentPose} />
     <button onClick={startYoga} className="secondary-btn">
-      Start Pose
+   {t('Start Pose')}
     </button>
   </div>
 </div>

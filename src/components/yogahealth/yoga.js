@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select"; // Multi-select dropdown package
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import "./yoga.css";
 
 function Yoga() {
+  const { t } = useTranslation(); // Initialize the useTranslation hook
+
   const [healthProblems, setHealthProblems] = useState([]); // Health problems list from Flask
   const [selectedProblems, setSelectedProblems] = useState([]); // Selected health problems
   const [suggestions, setSuggestions] = useState([]); // Yoga suggestions from Flask
@@ -41,22 +44,22 @@ function Yoga() {
 
   return (
     <div className="App">
-      <h1 style={{color:"white"}}>Yoga Pose Suggestions</h1>
+      <h1 style={{ color: "white" }}>{t('yogaPoseSuggestions')}</h1>
       <div className="dropdown-container">
-        <h2 style={{color:"white"}}>Select Health Problems</h2>
+        <h2 style={{ color: "white" }}>{t('selectHealthProblems')}</h2>
         <Select
           isMulti
           options={healthProblems}
           value={selectedProblems}
           onChange={setSelectedProblems}
-          placeholder="Select health problems..."
+          placeholder={t('selectHealthProblems')}
         />
       </div>
       <button className="fetch-button" onClick={fetchSuggestions}>
-        Get Suggestions
+        {t('getSuggestions')}
       </button>
       <div className="suggestions">
-        <h2 style={{color:"white"}}>Yoga Suggestions</h2>
+        <h2 style={{ color: "white" }}>{t('yogaSuggestions')}</h2>
         {suggestions.length > 0 ? (
           <div className="yoga-list">
             {suggestions.map((suggestion, index) => (
@@ -70,7 +73,7 @@ function Yoga() {
             ))}
           </div>
         ) : (
-          <p style={{color:"white"}}>No suggestions to display. Please select health problems.</p>
+          <p style={{ color: "white" }}>{t('noSuggestions')}</p>
         )}
       </div>
     </div>

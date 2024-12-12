@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './RecipeSection.css';
+import { useTranslation } from 'react-i18next';
 
 
 const RecipeSection = () => {
+  const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [currentVideo, setCurrentVideo] = useState('');
   const [currentLikes, setCurrentLikes] = useState(0);
@@ -406,37 +408,19 @@ const RecipeSection = () => {
     : videos.filter(video => video.region === selectedRegion);
     return (
       <div className="recipe-section">
-        <h2>Regional Recipes</h2>
-        
-        {/* Region Selection Buttons */}
-        <div className="region-selector">
+      <h2>{t('recipeSection.title')}</h2>
+      <div className="region-selector">
+        {['all', 'north', 'south', 'east', 'west'].map(region => (
           <button 
-            className={selectedRegion === 'north' ? 'active' : ''} 
-            onClick={() => setSelectedRegion('north')}
+            key={region}
+            className={selectedRegion === region ? 'active' : ''}
+            onClick={() => setSelectedRegion(region)}
           >
-            North
+            {t(`recipeSection.region.${region}`)}
           </button>
-          <button 
-            className={selectedRegion === 'south' ? 'active' : ''} 
-            onClick={() => setSelectedRegion('south')}
-          >
-            South
-          </button>
-          <button 
-            className={selectedRegion === 'east' ? 'active' : ''} 
-            onClick={() => setSelectedRegion('east')}
-          >
-            East
-          </button>
-          <button 
-            className={selectedRegion === 'west' ? 'active' : ''} 
-            onClick={() => setSelectedRegion('west')}
-          >
-            West
-          </button>
-        </div>
-  
-        <div className="recipe-thumbnails">
+        ))}
+      </div>
+      <div className="recipe-thumbnails">
           {filteredVideos.map((video, index) => (
             <div 
               key={index} 
@@ -455,7 +439,6 @@ const RecipeSection = () => {
             </div>
           ))}
         </div>
-  
         {showModal && (
           <div className="modal" onClick={closeModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
