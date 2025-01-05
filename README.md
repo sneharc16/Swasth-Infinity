@@ -1,6 +1,6 @@
 # SWASTH INFINITY: A HOLISTIC WELLNESS APP
 Our main offerings include:
-##1. Health Risk Prediction
+## 1. Health Risk Prediction
 Machine Learning-Based Risk Assessment
 Uses Random Forest Classifier to predict health risk levels (Low, Medium, High) based on user inputs.
 
@@ -14,7 +14,7 @@ Obese
 Waist-to-Hip Ratio (WHR)
 Evaluates fat distribution and body shape based on waist and hip measurements.
 
-##2. Real-Time Yoga Posture Monitoring System
+## 2. Real-Time Yoga Posture Monitoring System
 AI-Based Pose Detection
 Integrates MoveNet for real-time monitoring of yoga poses.
 
@@ -24,7 +24,7 @@ Provides instant suggestions to correct form and alignment during yoga exercises
 Progress Tracking
 Logs pose performance data to monitor flexibility, balance, and strength improvements.
 
-##3. Virtual Forest with HTML A-Frames 
+## 3. Virtual Forest with HTML A-Frames 
 Interactive Virtual Environment
 Users can explore a 3D virtual forest built using HTML A-Frames.
 
@@ -34,7 +34,7 @@ Tracks eco-friendly activities and fitness goals, rewarding users with virtual t
 Customization
 Users can design and personalize their forests based on progress and achievements.
 
-##4. Diet Recommender System 
+## 4. Diet Recommender System 
 AI-Driven Recommendations
 Suggests personalized diet plans based on:
 
@@ -50,7 +50,7 @@ Uses OpenFoodFacts and USDA datasets to recommend meals rich in essential nutrie
 Real-Time Nutritional Tracking
 Monitors macronutrient and micronutrient intake to help users meet dietary targets.
 
-##5. Personalized Advice and Recommendations
+## 5. Personalized Advice and Recommendations
 Lifestyle Suggestions
 Offers tips for improving health based on BMI, WHR, and body fat percentage.
 
@@ -60,7 +60,7 @@ Alerts users about potential health issues like obesity, heart disease, and diab
 Exercise and Activity Recommendations
 Suggests cardio, strength, and flexibility workouts tailored to fitness levels.
 
-##6. Chat Consulting with Experts 
+## 6. Chat Consulting with Experts 
 Connect with Top Professionals
 In-built chat system to consult:
 
