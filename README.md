@@ -1,4 +1,4 @@
-#SWASTH INFINITY: A HOLISTIC WELLNESS APP
+# SWASTH INFINITY: A HOLISTIC WELLNESS APP
 Our main offerings include:
 1. Health Risk Prediction
 Machine Learning-Based Risk Assessment
