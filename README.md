@@ -74,6 +74,23 @@ Allows users to select preferred consultants.
 Personalized Interaction
 AI chatbots and human experts collaborate for instant advice and long-term plans.
 
+## 7. User Blogs and Recipe Sharing Platform 
+Community-Driven Content
+Allows users to share healthy recipes and personal fitness journeys.
+
+Category-Based Filters
+Blogs sorted into categories like:
+
+Vegan, Keto, Low-Carb, High-Protein, etc.
+Interactive Features
+Users can like, comment, and save recipes to their profiles.
+
+Featured Blogs Section
+Highlights popular recipes and inspirational transformation stories.
+
+Recipe Ratings and Nutritional Breakdown
+Shows ratings and nutritional content for each recipe.
+
 
 
 
