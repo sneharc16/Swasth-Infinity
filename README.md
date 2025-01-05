@@ -60,6 +60,22 @@ Alerts users about potential health issues like obesity, heart disease, and diab
 Exercise and Activity Recommendations
 Suggests cardio, strength, and flexibility workouts tailored to fitness levels.
 
+6. Chat Consulting with Experts 
+Connect with Top Professionals
+In-built chat system to consult:
+
+Psychologists for mental health and stress management.
+Therapists for therapy and well-being tips.
+Fitness Trainers for workout and fitness plans.
+Expert Profiles
+
+Displays qualifications and areas of expertise.
+Allows users to select preferred consultants.
+Personalized Interaction
+AI chatbots and human experts collaborate for instant advice and long-term plans.
+
+
+
 
 
 
