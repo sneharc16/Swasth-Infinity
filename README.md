@@ -1,3 +1,68 @@
+#SWASTH INFINITY: A HOLISTIC WELLNESS APP
+Our main offerings include:
+1. Health Risk Prediction
+Machine Learning-Based Risk Assessment
+Uses Random Forest Classifier to predict health risk levels (Low, Medium, High) based on user inputs.
+
+BMI and Body Shape Analysis
+Computes Body Mass Index (BMI) and classifies users as:
+
+Underweight
+Normal
+Overweight
+Obese
+Waist-to-Hip Ratio (WHR)
+Evaluates fat distribution and body shape based on waist and hip measurements.
+
+2. Real-Time Yoga Posture Monitoring System
+AI-Based Pose Detection
+Integrates MoveNet for real-time monitoring of yoga poses.
+
+Posture Correction Feedback
+Provides instant suggestions to correct form and alignment during yoga exercises.
+
+Progress Tracking
+Logs pose performance data to monitor flexibility, balance, and strength improvements.
+
+3. Virtual Forest with HTML A-Frames 
+Interactive Virtual Environment
+Users can explore a 3D virtual forest built using HTML A-Frames.
+
+Gamification for Sustainability
+Tracks eco-friendly activities and fitness goals, rewarding users with virtual trees and badges.
+
+Customization
+Users can design and personalize their forests based on progress and achievements.
+
+4. Diet Recommender System 
+AI-Driven Recommendations
+Suggests personalized diet plans based on:
+
+Body metrics
+Fitness goals
+Nutritional preferences
+Alternative Food Suggestions
+Provides healthier alternatives for commonly consumed junk foods.
+
+Integration with Recipe Databases
+Uses OpenFoodFacts and USDA datasets to recommend meals rich in essential nutrients.
+
+Real-Time Nutritional Tracking
+Monitors macronutrient and micronutrient intake to help users meet dietary targets.
+
+5. Personalized Advice and Recommendations
+Lifestyle Suggestions
+Offers tips for improving health based on BMI, WHR, and body fat percentage.
+
+Health Risk Warnings
+Alerts users about potential health issues like obesity, heart disease, and diabetes.
+
+Exercise and Activity Recommendations
+Suggests cardio, strength, and flexibility workouts tailored to fitness levels.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
